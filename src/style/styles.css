@@ -4,7 +4,6 @@ body {
     padding: 0;
 }
 
-
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -45,22 +44,22 @@ body {
     align-items: center;
 }
 
-
 .search .fa-solid,
 .cart .fa-solid {
     font-size: 25px;
     margin-right: 5px;
 }
 
-
 .search {
     display: flex;
     align-items: center;
     background-color: #b3b3b3;
     border-radius: 500px;
+    border: 1px solid transparent;
     margin-left: 300px;
     padding: 5px;
     width: 300px;
+    height: 30px;
 }
 
 .search a {
@@ -70,20 +69,18 @@ body {
     color: #d6d1d1;
 }
 
-
 .search input {
     background: transparent;
     border: none;
     padding: 10px;
+    color: #fff;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     outline: none;
-    width: 200px;
+    width: 100%;
     font-size: 16px;
-    color: #000;
 }
-
 
 .cart {
     display: flex;
