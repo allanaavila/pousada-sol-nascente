@@ -12,7 +12,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 100%;
     z-index: 1000;
     padding: 10px 20px;
 }
@@ -44,7 +44,7 @@ body {
     align-items: center;
     background-color: #b3b3b3;
     border-radius: 500px;
-    margin-left: 20px;
+    margin-left: 300px;
     padding: 5px;
     width: 300px;
 }
@@ -74,4 +74,24 @@ body {
     width: 100px;
     font-size: 16px;
     color: #d6d1d1;
+}
+
+
+.header_cart {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 42px;
+}
+
+.header_cart .cart a {
+    text-decoration: none;
+    color: #615959;
+    display: flex;
+    align-items: center;
+}
+
+.header_cart .cart .fa-solid {
+    font-size: 25px;
+    margin-right: 5px;
 }
