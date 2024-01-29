@@ -2,6 +2,7 @@ body {
     font-family: var(--font-dm-sans); 
     margin: 0;
     padding: 0;
+    background-color: var(--bg-cinza-esverdeado-color);
 }
 
 .header-container {
@@ -14,7 +15,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 10px 20px;
-    background-color: var(--bg-white-color); 
+    background-color: var(--bg-verde-acinzentado-color); 
     box-shadow: 0 2px 4px var(--bg-transparente-color);
 }
 
@@ -34,12 +35,12 @@ body {
 .header .logo .fa-regular {
     font-size: 25px;
     margin-right: 5px;
-    color: var(--bg-gray-color);
+    color: var(--bg-fundo-color);
 }
 
 .header .logo a {
     text-decoration: none;
-    color: var(--bg-gray-color);
+    color: var(--bg-fundo-color);
     display: flex;
     align-items: center;
 }
@@ -53,7 +54,7 @@ body {
 .search {
     display: flex;
     align-items: center;
-    background-color: var(--bg-lightgray-color);
+    background-color: var(--bg-verde-escuro-color);
     border-radius: 500px;
     border: 1px solid transparent;
     margin-left: 300px;
@@ -63,7 +64,7 @@ body {
 }
 
 .search .fa-solid {
-    color: var(--bg-gray-color);
+    color: var(--bg-fundo-color);
 }
 
 .search button {
@@ -78,7 +79,7 @@ body {
     background: transparent;
     border: none;
     padding: 10px;
-    color: var(--bg-gray-color);
+    color: var(--bg-fundo-color);
     outline: none;
     width: 100%;
     font-size: 16px;
@@ -92,7 +93,7 @@ body {
 
 .cart a {
     text-decoration: none;
-    color: var(--bg-gray-color);
+    color: var(--bg-fundo-color);
     display: flex;
     align-items: center;
 }
