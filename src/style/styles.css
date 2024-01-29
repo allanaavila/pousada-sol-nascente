@@ -15,6 +15,14 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 10px 20px;
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header .logo {
@@ -26,8 +34,7 @@ body {
 
 .header .logo .fa-regular {
     font-size: 25px;
-    padding: 16px 15px 15px 16px;
-    width: 20px;
+    margin-right: 5px;
     color: #615959;
 }
 
@@ -39,7 +46,14 @@ body {
 }
 
 
-.header_search {
+.search .fa-solid,
+.cart .fa-solid {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+
+.search {
     display: flex;
     align-items: center;
     background-color: #b3b3b3;
@@ -49,21 +63,15 @@ body {
     width: 300px;
 }
 
-.header_search a {
+.search a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #d6d1d1;
 }
 
-.header_search .fa-solid {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-}
 
-
-.header_search input {
+.search input {
     background: transparent;
     border: none;
     padding: 10px;
@@ -71,27 +79,22 @@ body {
     overflow: hidden;
     white-space: nowrap;
     outline: none;
-    width: 100px;
+    width: 200px;
     font-size: 16px;
-    color: #d6d1d1;
+    color: #000;
 }
 
 
-.header_cart {
+.cart {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: 42px;
+    margin-left: 300px;
 }
 
-.header_cart .cart a {
+.cart a {
     text-decoration: none;
     color: #615959;
     display: flex;
     align-items: center;
 }
 
-.header_cart .cart .fa-solid {
-    font-size: 25px;
-    margin-right: 5px;
-}
