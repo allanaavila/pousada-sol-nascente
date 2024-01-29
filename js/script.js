@@ -4,5 +4,5 @@ function limparCampo() {
     document.getElementById('search-input').value = ''
 }
 
-setTimeout(limparCampo, 4000);
+setTimeout(limparCampo, 2000);
 
