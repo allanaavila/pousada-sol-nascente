@@ -10,6 +10,9 @@
 
     --bg-black-color: #000;
     --bg-white-color: #FFF;
+    --bg-gray-color: #615959;
+    --bg-lightgray-color: #b3b3b3;
+    --bg-transparente-color: rgba(0, 0, 0, 0.1);
  }
 
 
