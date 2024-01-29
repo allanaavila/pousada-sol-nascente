@@ -1,20 +1,77 @@
 body {
-    background-color: var(--bg-white-color);
     font-family: var(--font-dm-sans); 
-}
-
-.header {
-    background-color: #6495ED;
-}
-
-.header  .logo .fa-regular {
-    font-size: 20px;
-    color: var(--bg-white-color);
-    margin-right: 10px;
-    padding-right: 8px;
+    margin: 0;
+    padding: 0;
 }
 
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
 
 
+.header .logo .fa-regular {
+    font-size: 25px;
+    padding: 16px 15px 15px 16px;
+    width: 20px;
+    color: #615959;
+}
 
+.header .logo a {
+    text-decoration: none;
+    color: #615959;
+    display: flex;
+    align-items: center;
+}
+
+
+.header_search {
+    display: flex;
+    align-items: center;
+    background-color: #b3b3b3;
+    border-radius: 500px;
+    margin-left: 20px;
+    padding: 5px;
+    width: 300px;
+}
+
+.header_search a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #d6d1d1;
+}
+
+.header_search .fa-solid {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+
+.header_search input {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: none;
+    width: 100px;
+    font-size: 16px;
+    color: #d6d1d1;
+}
