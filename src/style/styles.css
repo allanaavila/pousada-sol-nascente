@@ -1,11 +1,20 @@
 body {
-    background-color: #fff;
+    background-color: var(--bg-white-color);
+    font-family: var(--font-dm-sans); 
+}
+
+.header {
+    background-color: #6495ED;
+}
+
+.header  .logo .fa-regular {
+    font-size: 20px;
+    color: var(--bg-white-color);
+    margin-right: 10px;
+    padding-right: 8px;
 }
 
 
-h2 {
-    color: #000;
-}
 
 
 

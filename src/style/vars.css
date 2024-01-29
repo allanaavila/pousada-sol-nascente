@@ -1,5 +1,16 @@
-/*FONT*/
 
+ :root {
+
+    /*FONT*/
+
+    --font-dm-sans: 'HK Grotesk', sans-serif;
+
+
+    /*COLORS*/
+
+    --bg-black-color: #000;
+    --bg-white-color: #FFF;
+ }
 
 
 
