@@ -38,7 +38,7 @@ body {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 
-    left: 60%;
+    left: 0;
 }
 
 /*Texto*/
@@ -90,6 +90,7 @@ body {
     background-color: transparent;
     border: 1px solid var(--bg-verde-acinzentado-color);
     color: var(--bg-white-color);
+    transition: background-color .5s;
 }
 
 .btn-primary:hover {
@@ -98,9 +99,11 @@ body {
 }
 
 .btn-secondary {
+    margin: 16px;
     background-color: var(--bg-verde-escuro-color);
     border: 1px solid var(--bg-verde-escuro-color);
     color: var(--bg-white-color);
+    transition: background-color .5s;
 }
 
 .btn-secondary:hover {
@@ -110,7 +113,6 @@ body {
 }
 
 
-
 /*PRIMEIRO ELEMENTO*/
 .first-column {
     text-align: center;
@@ -118,10 +120,14 @@ body {
     z-index: 10;
 }
 
+.first-content .second-column {
+    z-index: 11;
+}
+
 .first-content {
     display: flex;
-    display: none;
 }
+
 
 /*SEGUNDO ELEMENTO*/
 
@@ -140,10 +146,12 @@ body {
 
 .second-content .first-column {
     order: 2;
+    z-index: -1;
 }
 
 .second-content .second-column {
     order: 1;
+    z-index: -1;
 }
 
 .password {
@@ -152,6 +160,7 @@ body {
     text-decoration: none;
     margin: 15px 0;
     text-align: center;
+    transition: color .6s;
 }   
 
 .password::first-letter {
@@ -196,24 +205,33 @@ body {
     padding: 0 5px;
 }
 
+input:-webkit-autofill 
+{    
+    -webkit-box-shadow: 0 0 0px 1000px #AFC1B6 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
 
 /*ICONS REDES SOCIAIS*/
 
 .link-social-media:not(:first-child){
     margin-left: 10px;
 }
+
 .link-social-media .item-social-media {
     transition: background-color .5s;
 }
+
 .link-social-media:hover .item-social-media{
     background-color: var(--bg-verde-escuro-color);
     color: var(--bg-white-color);
     border-color: var(--bg-verde-escuro-color);
 }
+
 .list-social-media {
     display: flex;
     list-style-type: none;
 }
+
 .item-social-media {
     border: 1px solid var(--bg-verde-acinzentado-color);
     border-radius: 50%;
@@ -224,9 +242,35 @@ body {
     color: var(--bg-verde-escuro-color);
 }
 
+/*sing-in*/
+.sing-in-js .first-content .first-column,
+.sing-in-js .first-content .second-column{
+    z-index: -1;
+}
 
+.sing-in-js .second-content .first-column,
+.sing-in-js .second-content .second-column {
+    z-index: 11;
+}
 
+.sing-in-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
+/*sing-up*/
+.sing-up-js .second-content .first-column,
+.sing-up-js .second-content .second-column  {
+    z-index: -1;
+}
+
+.sing-up-js .first-content .first-column,
+.sing-up-js .first-content .second-column {
+    z-index: 11;
+}
 
 
 
