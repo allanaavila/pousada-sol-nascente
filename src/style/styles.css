@@ -46,14 +46,14 @@ body {
 }
 
 .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 350px;
     width: 30px;
     height: 20px;
     border-radius: 50px;
     background-color: var(--bg-white-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 16px 28px;
     gap: 24px;
     cursor: pointer;
@@ -117,4 +117,48 @@ body {
     display: flex;
     align-items: center;
 }
+
+
+.login-container {
+    margin-left: 300px;
+}
+.header-container .login-container .button {
+    border: 0;
+    outline: none;
+    font-family: var(--font-dm-sans);
+    font-size: inherit;
+    cursor: pointer;
+}
+
+
+.header-container  .login-container .login {
+    padding: 12px 16px;
+    background-color: transparent;
+    color: var(--bg-fundo-color);
+    border-radius: 10px;
+    border: 2px solid var(--bg-cinza-esverdeado-color);
+    transition: 0.2s;
+}
+
+.login-container .login:hover {
+    background-color: var(--bg-cinza-esverdeado-color);
+    color: var(--bg-white-color);
+}
+
+.login-container.active #login-icon {
+    display: none;
+}
+
+.login-container.active button.login {
+    display: block;
+}
+
+.login-container #login-icon {
+    display: block;
+}
+
+.login-container button.login {
+    display: none;
+}
+
 
