@@ -20,7 +20,7 @@ body {
 .content {
     background-color: var(--bg-white-color);
     border-radius: 15px;
-    width: 80%;
+    width: 60%;
     height: 50%;
     justify-content: space-between;
     align-items: center;
@@ -55,6 +55,10 @@ body {
     line-height: 30px;
 }
 
+.title-secondary {
+    color: var(--bg-verde-escuro-color);
+}
+
 
 /*BUTTON*/
 .btn {
@@ -77,6 +81,10 @@ body {
     color: var(--bg-white-color);
 }
 
+.btn-secondary {
+
+}
+
 
 
 /*PRIMEIRO ELEMENTO*/
@@ -94,12 +102,18 @@ body {
 
 .second-column {
     flex: 2 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .second-content {
     position: absolute;
     display: none;
 }
+
+
+
 
 /*FORMULÁRIO*/
 .form {
@@ -112,6 +126,7 @@ body {
 
 .list-social-media {
     display: flex;
+    list-style-type: none;
 }
 
 
