@@ -160,4 +160,19 @@ body {
     color: var(--bg-cinza-esverdeado-color);
 }
 
+/*
+@media only screen and (max-width: 400) {
+    .search-container {
+        margin-left: 20px;
+    }
+    
+    .login-container {
+        right: 10px;
+    }
+    
+    .cart {
+        right: 5px;
+    }
+}
+*/
 
