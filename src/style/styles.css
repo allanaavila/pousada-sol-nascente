@@ -57,7 +57,7 @@ body {
     width: 30px;
     height: 20px;
     border-radius: 50px;
-    background-color: var(--bg-white-color);
+    background-color: var(--bg-verde-escuro-color);
     padding: 16px 28px;
     gap: 24px;
     cursor: pointer;
@@ -103,6 +103,10 @@ body {
     cursor: pointer;
 }
 
+.search-container:hover {
+    color: var(--bg-cinza-esverdeado-color);
+}
+
 /*LOGIN*/
 
 .login-container {
@@ -122,8 +126,8 @@ body {
 
 .login-container .login {
     padding: 12px 16px;
-    background-color: transparent;
-    color: var(--bg-fundo-color);
+    background-color: var(--bg-verde-escuro-color);
+    color: var(--bg-white-color);
     border-radius: 10px;
     border: 2px solid var(--bg-cinza-esverdeado-color);
     transition: 0.2s;
