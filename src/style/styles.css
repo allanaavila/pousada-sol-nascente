@@ -5,6 +5,8 @@ body {
     background-color: var(--bg-cinza-esverdeado-color);
 }
 
+/*HEADER*/
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -45,6 +47,8 @@ body {
     align-items: center;
 }
 
+/*SEARCH*/
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -80,11 +84,12 @@ body {
     display: block;
 }
 
-.header-container span{
+
+.search-container span{
     font-size: 22px;
 }
 
-.header-container input {
+.search-container input {
     display: none;
     outline: none;
     border: none;
@@ -92,13 +97,45 @@ body {
     background-color: transparent;
 }
 
-.header-container span .fa-times {
+.search-container span .fa-times {
     display: none;
     margin-left: auto;
     cursor: pointer;
 }
 
+/*LOGIN*/
 
+.login-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 200px;
+}
+
+.login-container button {
+    border: 0;
+    outline: none;
+    font-family: var(--font-dm-sans);
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.login-container .login {
+    padding: 12px 16px;
+    background-color: transparent;
+    color: var(--bg-fundo-color);
+    border-radius: 10px;
+    border: 2px solid var(--bg-cinza-esverdeado-color);
+    transition: 0.2s;
+}
+
+.login-container .login:hover {
+    background-color: var(--bg-cinza-esverdeado-color);
+    color: var(--bg-white-color);
+}
+
+
+/*CART*/
 .cart .fa-solid {
     font-size: 25px;
     margin-right: 5px;
@@ -119,46 +156,8 @@ body {
 }
 
 
-.login-container {
-    margin-left: 300px;
-}
-.header-container .login-container .button {
-    border: 0;
-    outline: none;
-    font-family: var(--font-dm-sans);
-    font-size: inherit;
-    cursor: pointer;
-}
-
-
-.header-container  .login-container .login {
-    padding: 12px 16px;
-    background-color: transparent;
-    color: var(--bg-fundo-color);
-    border-radius: 10px;
-    border: 2px solid var(--bg-cinza-esverdeado-color);
-    transition: 0.2s;
-}
-
-.login-container .login:hover {
-    background-color: var(--bg-cinza-esverdeado-color);
-    color: var(--bg-white-color);
-}
-
-.login-container.active #login-icon {
-    display: none;
-}
-
-.login-container.active button.login {
-    display: block;
-}
-
-.login-container #login-icon {
-    display: block;
-}
-
-.login-container button.login {
-    display: none;
+.cart a:hover {
+    color: var(--bg-cinza-esverdeado-color);
 }
 
 
