@@ -55,18 +55,20 @@
                 <h2 class="card_title">Quarto Lua</h2>
                 <p class="card_address">Corredor 10</p>
                 <p class="card_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam. 
-                    Minus sunt esse voluptatum nulla debitis, adipisci modi corporis eaque ut beatae!
+                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam.
                 </p>
                 <div class="card_button">
                     <div class="card_properties">
                         3 Camas | 1 Banheiro | 1 Frigobar
                     </div>
-                    <button class="card_btn"></button>
+                    <button class="card_btn" onclick="toggleFavorite()">
+                        <i id="heartIcon" class="fa-regular fa-heart"></i>
+                    </button>
                 </div>
             </div>
         </article>
     </div>
     <script src="./js/header.js"></script>
+    <script src="./js/cards.js"></script>
 </body>
 </html>
