@@ -36,3 +36,7 @@ document.addEventListener('click', (event) => {
 });
 
 setTimeout(limparCampo, 2000);
+
+document.getElementById("login-icon").addEventListener("click", function() {
+    window.location.href = "login.html";
+});
