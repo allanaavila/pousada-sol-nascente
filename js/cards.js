@@ -1,7 +1,8 @@
 
 
-function toggleFavorite() {
-  var heartIcon = document.getElementById('heartIcon');
-  heartIcon.classList.toggle('favorite');
-
+function toggleFavorite(heartIconId) {
+  var heartIcon = document.getElementById(heartIconId);
+  if (heartIcon) {
+      heartIcon.classList.toggle('favorite');
+  }
 }
