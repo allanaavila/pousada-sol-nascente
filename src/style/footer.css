@@ -1,20 +1,18 @@
-.main {
-    flex-grow: 2;
-}
+
 
 .footer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     background-color: var(--bg-verde-escuro-color);
     font-family: var(--font-dm-sans);
-    margin-top: auto;
     position: sticky;
 }
 
 .container-footer  {
     width: 100%;
-    margin: auto;
     display: flex;
-    flex-wrap: wrap;
-    height: 280px;
+    height: 200px;
 }
 
 .container-footer .row {
@@ -64,7 +62,6 @@ ul {
 }
 
 .footer-col .social-links a {
-    display: flex;
     color: #fff;
     background-color: var(--bg-lightgray-color);
     display: inline-block;
