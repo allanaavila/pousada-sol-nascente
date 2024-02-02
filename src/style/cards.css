@@ -4,9 +4,6 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     font-family: var(--font-dm-sans);
     padding: 16px;
 }

@@ -5,6 +5,10 @@ body {
     background-color: var(--bg-cinza-esverdeado-color);
 }
 
+main {
+    height: 100vh;
+}
+
 /*HEADER*/
 
 .header-container {
