@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 22%;
-    height: 400px;
+    height: 430px;
     margin: 5px 5px 5px 5px;
     overflow: hidden;
     cursor: pointer;
@@ -29,7 +29,6 @@ body {
     height: 400px;
     flex-wrap: wrap;
     margin-top: 16px;
-
 }
 
 .card_title {
@@ -44,7 +43,6 @@ body {
 .card_preview {
     height: 190px;
     width: 100%;
-    position: relative;
     overflow: hidden;
 }
 
@@ -70,7 +68,6 @@ body {
     background-color: var(--bg-white-color);
     color: var(--bg-verde-escuro-color);
     z-index: 1;
-    position: absolute;
     bottom: 10px;
     padding: 2px 4px;
     border-radius: 8px;
@@ -121,7 +118,33 @@ body {
     color: var(--like); /* Cor vermelha para o ícone favorito */
 }
 
+.reservar {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 8px;
+    background-color: var(--bg-verde-escuro-color);
+    transition: all 0.3s ease-out;
+    width: 80%;
+    margin-top: 5px;
+    align-self: center;
+}
 
+.reservar span {
+    color: var(--bg-white-color);
+    transition: all 0.3s ease-out;
+}
+
+.reservar span:hover {
+    color: var(--bg-fundo-color);
+}
+
+
+.reservar:hover {
+    background-color: var(--bg-verde-claro-color);
+}
 
 
 

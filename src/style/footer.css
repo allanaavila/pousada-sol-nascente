@@ -3,7 +3,7 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    position: relative;
+    align-self: flex-end;
     background-color: var(--bg-verde-escuro-color);
     font-family: var(--font-dm-sans);
 }
