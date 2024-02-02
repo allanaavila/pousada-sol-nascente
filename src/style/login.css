@@ -21,7 +21,7 @@ body {
     background-color: var(--bg-white-color);
     border-radius: 15px;
     width: 960px;
-    height: 50%;
+    height: 60%;
     justify-content: space-between;
     align-items: center;
     position: relative;
