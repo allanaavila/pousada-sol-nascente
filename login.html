@@ -6,11 +6,29 @@
     <title>Login</title>
     <link rel="stylesheet" href="./src/style/vars.css">
     <link rel="stylesheet" href="./src/style/login.css">
+    <link rel="stylesheet" href="./src/style/styles.css">
     <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+     <!--HEADER-->
+     <div class="header-container" style="height: 60px;">
+        <div class="header">
+            
+            <div class="logo">
+                <a href="index.html">
+                    <span class="fa-regular fa-sun"></span>
+                    <span>Pousada Sol Nascente</span>
+                </a>
+            </div>
+            <div class="login-container">
+                <a href="index.html" class="login" id="login-icon" style="text-decoration: none;">Início</a>
+            </div>
+            
+        </div>
+    </div>
 
+    <!--Login-->
+    <div class="container">
         <div class="content first-content">
             <div class="first-column">
                 <h2 class="title title-primary">Bem vindo!</h2>
@@ -59,7 +77,6 @@
             </div>
         </div>
 
-
         <div class="content second-content">
             <div class="first-column">
                 <h2 class="title title-primary">Olá usuário!</h2>
@@ -103,9 +120,10 @@
                 </form>
             </div>
         </div>
-
     </div>
 
     <script src="./js/login.js"></script>
+    <script src="./js/header.js"></script>
+
 </body>
 </html>
