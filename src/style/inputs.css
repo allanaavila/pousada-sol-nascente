@@ -1,0 +1,74 @@
+.input {
+    width: 90%;
+    height: 60px;
+    background-color: var(--bg-verde-acinzentado-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+/*DATE*/
+.date-input {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+.date-input label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.date-input input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.date-input input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/*Check-in  e Check-out*/
+
+.input-container {
+    background-color: #fff;
+    width: 290px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.input-container a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    color: var(--bg-verde-escuro-color);
+}
+
+.input-container .fa {
+    color: var(--bg-lightgray-color);
+    font-size: 18px; 
+    margin-right: 10px;
+}
+
+.input-container a .text {
+    font-family: var(--font-dm-sans);
+    font-size: 20px; 
+    color: #333;
+    text-align: center;
+    margin-top: 11px;
+}
