@@ -42,9 +42,8 @@
 .input-container a .text {
     font-family: var(--font-dm-sans);
     font-size: 20px; 
-    color: #333;
+    color: var(--bg-verde-claro-color);
     text-align: center;
-    margin-top: 11px;
 }
 
 #searchButton {

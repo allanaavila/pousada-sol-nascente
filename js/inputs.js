@@ -29,8 +29,18 @@ document.getElementById('applyDates').addEventListener('click', function () {
 
 // Adicione esta função para formatar a data (opcional)
 function formatDate(dateString) {
-    var options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return new Date(dateString.replace(/-/g, '/')).toLocaleDateString('en-US', options);
+    // Converte a string da data para um objeto Date
+    var date = new Date(dateString.replace(/-/g, '/'));
+
+    // Obtém os componentes da data (dia, mês e ano)
+    var day = date.getDate();
+    var month = date.getMonth() + 1; // Adiciona 1 porque os meses começam do zero
+    var year = date.getFullYear();
+
+    // Formata a data no formato desejado
+    var formattedDate = padNumber(day) + '/' + padNumber(month) + '/' + year;
+
+    return formattedDate;
 }
 
 // Adicione esta função para validar as datas
@@ -59,4 +69,9 @@ window.onclick = function (event) {
         modal.style.display = 'none';
     }
 };
+
+// Função auxiliar para garantir que os números tenham dois dígitos
+function padNumber(number) {
+    return (number < 10 ? '0' : '') + number;
+}
 
