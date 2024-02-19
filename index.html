@@ -94,9 +94,20 @@
                     <input type="date" id="checkout" name="checkout" placeholder="Check-out" />
                 </div>
             </div>
+            <button id="searchButton">Pesquisar</button>
         </div>
     </div>
-        
+    <!-- Modal para seleção de datas -->
+    <div id="dateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <label for="checkinModal">Check-in:</label>
+            <input type="date" id="checkinModal" name="checkinModal" placeholder="Check-in" />
+            <label for="checkoutModal">Check-out:</label>
+            <input type="date" id="checkoutModal" name="checkoutModal" placeholder="Check-out" />
+            <button id="applyDates">Aplicar</button>
+        </div>
+    </div>
     
      <!--CARDS-->
     <div class="cards">
