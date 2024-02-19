@@ -80,17 +80,11 @@ function padNumber(number) {
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('toggleDates').addEventListener('click', function () {
-        document.getElementById('dateModal').style.display = 'block';
         document.getElementById('guestsModal').style.display = 'none';
     });
 
     document.getElementById('toggleGuests').addEventListener('click', function () {
         document.getElementById('guestsModal').style.display = 'block';
-        document.getElementById('dateModal').style.display = 'none';
-    });
-
-    document.getElementById('closeModal').addEventListener('click', function () {
-        document.getElementById('dateModal').style.display = 'none';
     });
 
     document.getElementById('closeGuestsModal').addEventListener('click', function () {
@@ -109,4 +103,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Oculte o modal de hóspedes
         document.getElementById('guestsModal').style.display = 'none';
     });
+});
+
+window.addEventListener('click', function (event) {
+    var guestsModal = document.getElementById('guestsModal');
+    if (event.target == guestsModal) {
+        guestsModal.style.display = 'none';
+    }
 });
