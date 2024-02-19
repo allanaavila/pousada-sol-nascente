@@ -75,3 +75,38 @@ function padNumber(number) {
     return (number < 10 ? '0' : '') + number;
 }
 
+
+//Filtros para Pessoas e quartos
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('toggleDates').addEventListener('click', function () {
+        document.getElementById('dateModal').style.display = 'block';
+        document.getElementById('guestsModal').style.display = 'none';
+    });
+
+    document.getElementById('toggleGuests').addEventListener('click', function () {
+        document.getElementById('guestsModal').style.display = 'block';
+        document.getElementById('dateModal').style.display = 'none';
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function () {
+        document.getElementById('dateModal').style.display = 'none';
+    });
+
+    document.getElementById('closeGuestsModal').addEventListener('click', function () {
+        document.getElementById('guestsModal').style.display = 'none';
+    });
+
+    document.getElementById('applyGuests').addEventListener('click', function () {
+        var adults = document.getElementById('adults').value;
+        var children = document.getElementById('children').value;
+        var rooms = document.getElementById('rooms').value;
+
+        // Atualize o texto do link com os detalhes do filtro de hóspedes
+        var guestsDetailsText = `Adultos: ${adults}, Crianças: ${children}, Quartos: ${rooms}`;
+        document.getElementById('guestsDetailsText').innerHTML = guestsDetailsText;
+
+        // Oculte o modal de hóspedes
+        document.getElementById('guestsModal').style.display = 'none';
+    });
+});

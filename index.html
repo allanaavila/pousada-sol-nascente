@@ -94,9 +94,17 @@
                     <input type="date" id="checkout" name="checkout" placeholder="Check-out" />
                 </div>
             </div>
+            <div class="filtro">
+                <a href="#" id="toggleGuests">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="guestsDetailsText" class="text">Adultos - Crianças - Quartos</span>
+                </a>
+            </div>
             <button id="searchButton">Pesquisar</button>
         </div>
     </div>
+
+
     <!-- Modal para seleção de datas -->
     <div id="dateModal" class="modal">
         <div class="modal-content">
@@ -108,6 +116,22 @@
             <button id="applyDates">Aplicar</button>
         </div>
     </div>
+
+    <!-- Modal para seleção de hóspedes -->
+    <div id="guestsModal" class="modal guests-modal">
+        <div class="modal-content">
+            <span class="close" id="closeGuestsModal">&times;</span>
+            <!-- Campos para seleção de hóspedes (adultos, crianças, quartos) -->
+            <label for="adults">Adultos:</label>
+            <input type="number" id="adults" name="adults" min="1" max="6" value="1" />
+            <label for="children">Crianças:</label>
+            <input type="number" id="children" name="children" min="0" max="6" value="0" />
+            <label for="rooms">Quartos:</label>
+            <input type="number" id="rooms" name="rooms" min="1" max="2" value="1" />
+            <button id="applyGuests">Aplicar</button>
+        </div>
+    </div>
+
     
      <!--CARDS-->
     <div class="cards">
