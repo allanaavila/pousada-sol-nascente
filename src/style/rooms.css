@@ -6,17 +6,18 @@
 .photo-gallery {
     max-width: 800px;
     display: flex;
-    align-items: flex-start; 
+    align-items: stretch;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .main-photo {
-    flex: 1 1 70%;
+    flex: 1 1 40%;
 }
 
 .side-photos,
 .side-photos1 {
-    flex: 1 1 30%;
+    flex: 1 1 20%; 
 }
 
 h1, h2 {
@@ -24,7 +25,9 @@ h1, h2 {
 }
 
 img {
+    box-sizing: border-box;
     max-width: 100%;
+    display: inline-block;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
