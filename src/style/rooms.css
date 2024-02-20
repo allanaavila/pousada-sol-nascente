@@ -1,0 +1,35 @@
+.container-rooms {
+    background-color: #333;
+}
+
+
+.photo-gallery {
+    max-width: 800px;
+    display: flex;
+    align-items: flex-start; 
+    gap: 10px;
+}
+
+.main-photo {
+    flex: 1 1 70%;
+}
+
+.side-photos,
+.side-photos1 {
+    flex: 1 1 30%;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
