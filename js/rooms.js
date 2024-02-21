@@ -10,3 +10,8 @@ prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length -1])
 })
+
+function reservarQuarto(paginaQuarto) {
+    // Redirecione para a página específica associada ao quarto
+    window.location.href = paginaQuarto;
+}
