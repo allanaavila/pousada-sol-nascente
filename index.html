@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pousada Sol Nascente</title>
+    <link rel="stylesheet" href="./src/style/vars.css">
+    <link rel="stylesheet" href="./src/style/styles.css">
+    <link rel="stylesheet" href="./src/style/cards.css">
+    <link rel="stylesheet" href="./src/style/footer.css">
+    <link rel="stylesheet" href="./src/style/slider.css">
+    <link rel="stylesheet" href="./src/style/inputs.css">
+    <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <div class="header-container">
+        <div class="header">
+            
+            <div class="logo">
+                <a href="">
+                    <span class="fa-regular fa-sun"></span>
+                    <span>Pousada Sol Nascente</span>
+                </a>
+            </div>
+
+            <div class="search-container">
+                <span class="fa fa-search" id="search-icon"></span>
+                <input id="search-input" maxlength="800" autocorrect="off" autocapitalize="off" spellcheck="false" 
+                placeholder="Pesquisar" value="" />
+                <span class="fa fa-times" id="close-icon"></span>
+            </div>
+
+            <div class="login-container">
+                <button class="login" id="login-icon">Login</button>
+            </div>
+
+            <div class="cart">
+                <a href="">
+                    <span class="fa-solid fa-shopping-cart"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+    <!--BANNER-->
+    <div class="slideshow-container">
+        <div class="myslides" fade>
+            <img src="./src/assets/banners/1.jpg" style="width: 100%">
+        </div>
+        <div class="myslides" fade>
+            <img src="./src/assets/banners/2.jpg" style="width: 100%">
+        </div>
+        <div class="myslides" fade>
+            <img src="./src/assets/banners/3.jpg" style="width: 100%">
+        </div>
+        <div class="myslides" fade>
+            <img src="./src/assets/banners/4.jpg" style="width: 100%">
+        </div>
+        <div class="myslides" fade>
+            <img src="./src/assets/banners/5.jpg" style="width: 100%">
+        </div>
+
+        <!-- Botões de navegação -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>  
+    <div style="text-align: center">
+        <span class="dot" onclick="currentSlides(1)"></span>
+        <span class="dot" onclick="currentSlides(2)"></span>
+        <span class="dot" onclick="currentSlides(3)"></span>
+        <span class="dot" onclick="currentSlides(4)"></span>
+        <span class="dot" onclick="currentSlides(5)"></span>
+    </div>
+
+    <!--Filtros-->
+    <div class="input">
+        <div class="input-container">
+            <a href="#" id="toggleDates">
+                <i class="fa fa-calendar-days"></i>
+                <span class="text">Check-in - Check-out</span>
+            </a>
+            <div id="dateInputs" style="display: none;">
+                <div class="date-input">
+                    <label for="checkin">Check-in:</label>
+                    <input type="date" id="checkin" name="checkin" placeholder="Check-in" />
+                </div>
+                <div class="date-input">
+                    <label for="checkout">Check-out:</label>
+                    <input type="date" id="checkout" name="checkout" placeholder="Check-out" />
+                </div>
+            </div>
+            <div class="filtro">
+                <a href="#" id="toggleGuests">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="guestsDetailsText" class="text">Adultos - Crianças - Quartos</span>
+                </a>
+            </div>
+            <button id="searchButton">Pesquisar</button>
+        </div>
+    </div>
+
+
+    <!-- Modal para seleção de datas -->
+    <div id="dateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <label for="checkinModal">Check-in:</label>
+            <input type="date" id="checkinModal" name="checkinModal" placeholder="Check-in" />
+            <label for="checkoutModal">Check-out:</label>
+            <input type="date" id="checkoutModal" name="checkoutModal" placeholder="Check-out" />
+            <button id="applyDates">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- Modal para seleção de hóspedes -->
+    <div id="guestsModal" class="modal guests-modal">
+        <div class="modal-content">
+            <span class="close" id="closeGuestsModal">&times;</span>
+            <!-- Campos para seleção de hóspedes (adultos, crianças, quartos) -->
+            <label for="adults">Adultos:</label>
+            <input type="number" id="adults" name="adults" min="1" max="6" value="1" />
+            <label for="children">Crianças:</label>
+            <input type="number" id="children" name="children" min="0" max="6" value="0" />
+            <label for="rooms">Quartos:</label>
+            <input type="number" id="rooms" name="rooms" min="1" max="2" value="1" />
+            <button id="applyGuests">Aplicar</button>
+        </div>
+    </div>
+
+    
+     <!--CARDS-->
+    <div class="cards">
+        <article class="card">
+            <div class="card_preview">
+                <img src="./src/assets/quartos/lua.jpg" alt="Quarto Lua">
+                <div class="card_price">R$580,00</div>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">Quarto Meia Noite</h2>
+                <p class="card_address">Ilha do Nascer</p>
+                <p class="card_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam.
+                </p>
+                <div class="card_button">
+                    <div class="card_properties">
+                        1 Camas | 1 Banheiro | 1 Frigobar
+                    </div>
+                    <button class="card_btn" onclick="toggleFavorite('heartIcon')">
+                        <i id="heartIcon" class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <button class="reservar" onclick="reservarQuarto('rooms1.html')">
+                    <span>Reservar</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card_preview">
+                <img src="./src/assets/quartos/luacheia.jpg" alt="Quarto Lua Cheia">
+                <div class="card_price">R$700,00</div>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">Quarto Lua Cheia</h2>
+                <p class="card_address">Ilha da Meia Noite</p>
+                <p class="card_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam.
+                </p>
+                <div class="card_button">
+                    <div class="card_properties">
+                        3 Camas | 2 Banheiro | 2 Frigobar
+                    </div>
+                    <button class="card_btn" onclick="toggleFavorite('heartIcon2')">
+                        <i id="heartIcon2" class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <button class="reservar" onclick="reservarQuarto('rooms.html')">
+                    <span>Reservar</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card_preview">
+                <img src="./src/assets/quartos/ninguante.jpg" alt="Quarto Lua Minguante">
+                <div class="card_price">R$600,00</div>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">Quarto Lua Minguante</h2>
+                <p class="card_address">Ilha das Estrelas</p>
+                <p class="card_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam.
+                </p>
+                <div class="card_button">
+                    <div class="card_properties">
+                        3 Camas | 1 Banheiro | 1 Frigobar
+                    </div>
+                    <button class="card_btn" onclick="toggleFavorite('heartIcon3')">
+                        <i id="heartIcon3" class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <button class="reservar" onclick="reservarQuarto('rooms2.html')">
+                    <span>Reservar</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card_preview">
+                <img src="./src/assets/quartos/pordosol.jpg" alt="Quarto Por do Sol">
+                <div class="card_price">R$1200,00</div>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">Quarto Por do Sol</h2>
+                <p class="card_address">Ilha do Sol Nascente</p>
+                <p class="card_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Voluptatibus placeat rerum quaerat eum dolores, molestias cupiditate harum quisquam.
+                </p>
+                <div class="card_button">
+                    <div class="card_properties">
+                        2 Camas | 2 Banheiro | 1 Frigobar
+                    </div>
+                    <button class="card_btn" onclick="toggleFavorite('heartIcon4')">
+                        <i id="heartIcon4" class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <button class="reservar" onclick="reservarQuarto('rooms3.html')">
+                    <span>Reservar</span>
+                </button>
+            </div>
+        </article>
+    </div>
+    </main>
+        <!--FOOTER-->
+        <footer class="footer">
+            <div class="container-footer row">
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">sobre nós</a></li>
+                        <li><a href="#">Nossos serviços</a></li>
+                        <li><a href="#">política de Privacidade</a></li>
+                        <li><a href="#">visite o site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>obter ajuda</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Reservas</a></li>
+                        <li><a href="#">Resultados</a></li>
+                        <li><a href="#">status da reserva</a></li>
+                        <li><a href="#">opções de pagamento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Site</h4>
+                    <ul>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Alterações no registro</a></li>
+                        <li><a href="#">github</a></li>
+                        <li><a href="#">todas versões</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>  
+        </footer>
+    <script src="./js/header.js"></script>
+    <script src="./js/cards.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/inputs.js"></script>
+    <script src="./js/rooms.js"></script>
+</body>
+</html>

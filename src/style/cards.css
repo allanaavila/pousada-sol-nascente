@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-dm-sans);
+    padding: 16px;
+}
+
+.card {
+    background-color: var(--bg-white-color);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 22%;
+    height: 430px;
+    margin: 5px 5px 5px 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 400px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card_title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 16px;
+}
+
+.card_preview {
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card_preview img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.4s ease-out;
+}
+
+.card:hover .card_preview img {
+    transform: scale(1.35);
+}
+
+
+.card_address {
+    margin: 6px 4px;
+    font-size: 14px;
+    color: var(--bg-verde-escuro-color);
+}
+
+.card_price {
+    background-color: var(--bg-white-color);
+    color: var(--bg-verde-escuro-color);
+    z-index: 1;
+    bottom: 10px;
+    padding: 2px 4px;
+    border-radius: 8px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.card_content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: var(--bg-verde-escuro-color);
+}
+
+.card_button {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_description {
+    margin-top: 8px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    color: var(--bg-verde-escuro-color);
+    font-size: 14px;
+}
+
+.card_properties {
+    font-size: 14px;
+    color: var(--bg-verde-escuro-color);
+}
+
+.card_btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.favorite {
+    color: var(--like); /* Cor vermelha para o ícone favorito */
+}
+
+.reservar {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 8px;
+    background-color: var(--bg-verde-escuro-color);
+    transition: all 0.3s ease-out;
+    width: 80%;
+    margin-top: 5px;
+    align-self: center;
+}
+
+.reservar span {
+    color: var(--bg-white-color);
+    transition: all 0.3s ease-out;
+}
+
+.reservar span:hover {
+    color: var(--bg-fundo-color);
+}
+
+
+.reservar:hover {
+    background-color: var(--bg-verde-claro-color);
+}
+
+
+

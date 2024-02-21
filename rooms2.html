@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarto Lua Minguante</title>
+    <link rel="stylesheet" href="./src/style/styles.css">
+    <link rel="stylesheet" href="./src/style/vars.css">
+    <link rel="stylesheet" href="./fontawesome/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./src/style/rooms.css">
+</head>
+<body>
+    <!--HEADER-->
+    <div class="header-container">
+        <div class="header">    
+            <div class="logo">
+                <a href="index.html">
+                    <span class="fa-regular fa-sun"></span>
+                    <span>Pousada Sol Nascente</span>
+                </a>
+            </div>
+            <div class="search-container">
+                <span class="fa fa-search" id="search-icon"></span>
+                <input id="search-input" maxlength="800" autocorrect="off" autocapitalize="off" spellcheck="false" 
+                placeholder="Pesquisar" value="" />
+                <span class="fa fa-times" id="close-icon"></span>
+            </div>
+            <div class="login-container">
+                <button class="login" id="login-icon">Login</button>
+            </div>
+    
+            <div class="cart">
+                <a href="">
+                    <span class="fa-solid fa-shopping-cart"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <main>
+       <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image: url(./src/assets/quartos/ninguante.jpg);">
+                <div class="content">
+                    <div class="name">Lua Minguante</div>
+                    <div class="des">Ilha das Estrelas</div>
+                    <button>Ver mais</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./src/assets/quartos/ninguante1.jpg);">
+                <div class="content">
+                    <div class="name">Lua Minguante</div>
+                    <div class="des">Ilha das Estrelas</div>
+                    <button>Ver mais</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./src/assets/quartos/luacheia2.jpg);">
+                <div class="content">
+                    <div class="name">Lua Minguante</div>
+                    <div class="des">Ilha das Estrelas</div>
+                    <button>Ver mais</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./src/assets/quartos/luacheia3.jpg);">
+                <div class="content">
+                    <div class="name">Lua Minguante</div>
+                    <div class="des">Ilha das Estrelas</div>
+                    <button>Ver mais</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./src/assets/quartos/ninguante4.jpg);">
+                <div class="content">
+                    <div class="name">Lua Minguante</div>
+                    <div class="des">Ilha das Estrelas</div>
+                    <button>Ver mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+       </div>
+    </main>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/rooms.js"></script>
+</body>
+</html>
