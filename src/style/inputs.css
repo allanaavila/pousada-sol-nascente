@@ -11,8 +11,6 @@
 }
 
 /*Check-in  e Check-out*/
-
-
 .input-container {
     background-color: #fff;
     width: 70%;
@@ -34,6 +32,13 @@
 }
 
 .input-container .fa {
+    color: var(--bg-lightgray-color);
+    font-size: 18px; 
+    margin-right: 10px;
+}
+
+
+.input-container .filtro .fa-solid {
     color: var(--bg-lightgray-color);
     font-size: 18px; 
     margin-right: 10px;
@@ -138,3 +143,4 @@
     color: var(--bg-verde-claro-color);
     border: 1px solid var(--bg-verde-claro-color);
 }
+

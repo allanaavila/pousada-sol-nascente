@@ -76,6 +76,8 @@ function padNumber(number) {
 }
 
 
+
+
 //Filtros para Pessoas e quartos
 
 document.addEventListener('DOMContentLoaded', function () {
