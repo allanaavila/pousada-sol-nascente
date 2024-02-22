@@ -17,7 +17,7 @@ document.getElementById('applyDates').addEventListener('click', function () {
         document.getElementById('checkout').value = checkoutDate;
 
         // Atualize o texto do link com as datas selecionadas
-        var dateLinkText = 'Check-in: ' + formatDate(checkinDate) + ' - Check-out: ' + formatDate(checkoutDate);
+        var dateLinkText = '<i class="fa fa-calendar-days"></i> ' + formatDate(checkinDate) + ' - ' + formatDate(checkoutDate);
         document.getElementById('toggleDates').innerHTML = dateLinkText;
 
         // Feche o modal

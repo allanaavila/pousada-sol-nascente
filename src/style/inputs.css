@@ -28,8 +28,9 @@
     justify-content: center;
     align-items: flex-end;
     cursor: pointer;
-    color: var(--bg-verde-escuro-color);
+    color: var(--bg-verde-claro-color);
 }
+
 
 .input-container .fa {
     color: var(--bg-lightgray-color);

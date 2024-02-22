@@ -402,3 +402,8 @@ input#submit:hover {
 }
 
 /* Estilos para o modal */
+.input-container a {
+    font-size: 14px;
+    color: var(--bg-verde-claro-color);
+}
+
