@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return (number < 10 ? '0' : '') + number;
     }
 
-
     //PAGAMENTO 
     function pagar() {
         var valorFinal = parseFloat(valorTotal.innerText.replace('R$', '').replace(',', '.'));
