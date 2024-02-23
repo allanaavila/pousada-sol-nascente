@@ -267,52 +267,32 @@ select {
     cursor: pointer;
 }
 
-
-/*taxa Imposto*/
+/*TAXA IMPOSTO*/
 .taxaImposto {
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
-.taxaImposto h2 {
-    margin-left: 20px;
+.valortaxaImposto {
+    font-weight: bold;
+    color: var(--bg-verde-escuro-color);
+    margin-left: 250px;
 }
 
-.valorTaxa p {
-    margin-left: 190px;
-}
-
-/*Taxa do Embarque*/
-.valortaxaImposto p {
-    margin-left: 175px;
-}
-
-.taxaImposto {
-    display: flex;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.taxaImposto h2 {
-    margin-left: 20px;
-}
-
-/*Valor Final*/
-.valorFinal p {
-    margin-left: 240px;
-}
+/*TOTAL*/
 
 .total {
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    padding: 5px;
+}
+.valorFinal {
+    font-weight: bold;
+    color: var(--bg-verde-escuro-color);
+    margin-left: 290px;
 }
 
-.total h2 {
-    margin-left: 23px;
-    font-size: 20px;
-}
+
 
 /*Valor parcelado final*/
 .valorParcelado p {
@@ -406,4 +386,3 @@ input#submit:hover {
     font-size: 14px;
     color: var(--bg-verde-claro-color);
 }
-
