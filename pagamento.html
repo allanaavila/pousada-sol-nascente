@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efetuar o pagamento</title>
     <link rel="stylesheet" href="./src/style/styles.css">
+    <link rel="stylesheet" href="./src/style/inputs.css">
     <link rel="stylesheet" href="./src/style/vars.css">
     <link rel="stylesheet" href="./fontawesome/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./src/style/pagamento.css">
@@ -15,30 +16,50 @@
         <div class="header">
             
             <div class="logo">
-                <a href="">
+                <a href="index.html">
                     <span class="fa-regular fa-sun"></span>
                     <span>Pousada Sol Nascente</span>
                 </a>
             </div>
 
-            <div class="search-container">
-                <span class="fa fa-search" id="search-icon"></span>
-                <input id="search-input" maxlength="800" autocorrect="off" autocapitalize="off" spellcheck="false" 
-                placeholder="Pesquisar" value="" />
-                <span class="fa fa-times" id="close-icon"></span>
-            </div>
-
             <div class="login-container">
                 <button class="login" id="login-icon">Login</button>
             </div>
-
-            <div class="cart">
-                <a href="">
-                    <span class="fa-solid fa-shopping-cart"></span>
-                </a>
-            </div>
         </div>
     </div>
+
+    <main>
+        <div class="payment-container">
+            <h2>Resumo da Reserva</h2>
+            <div class="reservation-summary">
+                <p>Quarto: </p>
+                <p>Data de Check-in: 00/00/0000</p>
+                <p>Data de Check-out: 00/00/0000</p>
+                <p>Total: R$ 0,00</p>
+            </div>
     
+            <h2>Efetue o Pagamento</h2>
+            
+            <!-- Formulário de Pagamento -->
+            <form id="actualPaymentForm" action="process_payment.php" method="post">
+                <div class="payment-fields">
+                    <label for="cardNumber">Número do Cartão:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+    
+                    <label for="expiryDate">Data de Validade:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+    
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+    
+                <button type="submit">Confirmar Pagamento</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/rooms.js"></script>
+    <script src="./js/inputs.js"></script>
 </body>
 </html>

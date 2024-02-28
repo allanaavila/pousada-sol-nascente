@@ -1,0 +1,50 @@
+.payment-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-summary {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-fields {
+    display: grid;
+    gap: 10px;
+    color: var(--bg-verde-claro-color);
+}
+
+.payment-container h2 {
+    color: var(--bg-verde-claro-color);
+}
+
+.payment-container p {
+    color: var(--bg-verde-escuro-color);
+    
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.header-container  {
+    height: 50px;
+}
+.login-container {
+    margin-bottom: 10px;
+}

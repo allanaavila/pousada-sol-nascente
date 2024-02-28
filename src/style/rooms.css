@@ -378,3 +378,7 @@ input#submit:hover {
     font-size: 14px;
     color: var(--bg-verde-claro-color);
 }
+
+.pagar a {
+    text-decoration: none;
+}
