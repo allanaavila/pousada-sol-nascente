@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     const diaria = document.getElementById('valorDiaria');
     const taxaImposto = document.getElementById('taxa');
     const valorTotal = document.getElementById('valorTotal');
     const valorParceladoFinal = document.getElementById('valorParceladoFinal');
     const opcaoParcelar = document.getElementById('parcelar');
+    const resumoReservaContainer = document.querySelector('.reservation-summary');
+    const applyDatesButton = document.getElementById('applyDates');
 
-    const resumoReservaContainer = document.querySelector('.reservation-summary'); 
-    
 
 
-    document.getElementById('applyDates').addEventListener('click', function () {
+    if (applyDatesButton) {
+        applyDatesButton.addEventListener('click', function () {
 
         var checkinDate = document.getElementById('checkinModal').value;
         var checkoutDate = document.getElementById('checkoutModal').value;
@@ -31,33 +33,15 @@ document.addEventListener('DOMContentLoaded', function () {
             taxaImposto.innerText = 'R$ ' + taxAmount.toFixed(2);
             valorTotal.innerText = 'R$ ' + finalAmount.toFixed(2);
 
-            sessionStorage.setItem('reservaCheckin', checkinDate);
-            sessionStorage.setItem('reservaCheckout', checkoutDate);
-
             updateReservationSummary(checkinDate, checkoutDate, finalAmount);
 
             document.getElementById('dateModal').style.display = 'none';
         } else {
             alert('Por favor, selecione datas válidas.');
         }
-});
-
-    function updateReservationSummary(checkinDate, checkoutDate, finalAmount) {
-        resumoReservaContainer.innerHTML = '';
-
-        var pCheckin = document.createElement('p');
-        pCheckin.textContent = 'Data de Check-in: ' + formatDate(checkinDate);
-        resumoReservaContainer.appendChild(pCheckin);
-
-        var pCheckout = document.createElement('p');
-        pCheckout.textContent = 'Data de Check-out: ' + formatDate(checkoutDate);
-        resumoReservaContainer.appendChild(pCheckout);
-
-        var pTotal = document.createElement('p');
-        pTotal.textContent = 'Total: R$ ' + finalAmount.toFixed(2);
-        resumoReservaContainer.appendChild(pTotal);
-    }
-
+    });
+}
+    
     function calculateNumberOfDays(checkinDate, checkoutDate) {
         var oneDay = 24 * 60 * 60 * 1000;
         var checkin = new Date(checkinDate);
@@ -98,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             valorParceladoFinal.innerText = 'R$ ' + valorEntrada.toFixed(2);
         }
     }
+
     // Associando a função pagar ao botão
     opcaoParcelar.addEventListener('change', function () {
         pagar();
@@ -105,9 +90,17 @@ document.addEventListener('DOMContentLoaded', function () {
     pagar();
 
     document.getElementById('actualPaymentForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita o envio padrão do formulário, pois você lidará com isso na função pagar()
+        event.preventDefault();
         pagar();
-    });  
+    });
+
+    function updateReservationSummary(checkinDate, checkoutDate, finalAmount) {
+        document.getElementById('checkin').textContent = 'Data de Check-in: ' + formatDate(checkinDate);
+        document.getElementById('checkout').textContent = 'Data de Check-out: ' + formatDate(checkoutDate);
+        document.getElementById('valorParceladoFinal').textContent = 'Total: R$ ' + finalAmount.toFixed(2);
+    
+        console.log('Atualizando resumo da reserva:', checkinDate, checkoutDate, finalAmount);
+    }
 });
 
 

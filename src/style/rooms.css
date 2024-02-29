@@ -338,6 +338,7 @@ input#submit:hover {
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
+    white-space: nowrap
 }
 
 .valorFinalReserva h4 {
