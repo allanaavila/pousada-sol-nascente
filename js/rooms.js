@@ -12,6 +12,13 @@ prev.addEventListener('click', function(){
 })
 
 function reservarQuarto(paginaQuarto) {
-    // Redirecione para a página específica associada ao quarto
+    var checkinDate = document.getElementById('checkin').value;
+    var checkoutDate = document.getElementById('checkout').value;
+
+    // Armazenar os detalhes da reserva na sessionStorage
+    sessionStorage.setItem('reservaCheckin', checkinDate);
+    sessionStorage.setItem('reservaCheckout', checkoutDate);
+
+    // Redirecionar para a página específica associada ao quarto
     window.location.href = paginaQuarto;
 }

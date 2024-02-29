@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const valorParceladoFinal = document.getElementById('valorParceladoFinal');
     const opcaoParcelar = document.getElementById('parcelar');
 
+    const resumoReservaContainer = document.querySelector('.reservation-summary'); 
+    
+
+
     document.getElementById('applyDates').addEventListener('click', function () {
+
         var checkinDate = document.getElementById('checkinModal').value;
         var checkoutDate = document.getElementById('checkoutModal').value;
 
@@ -26,11 +31,32 @@ document.addEventListener('DOMContentLoaded', function () {
             taxaImposto.innerText = 'R$ ' + taxAmount.toFixed(2);
             valorTotal.innerText = 'R$ ' + finalAmount.toFixed(2);
 
+            sessionStorage.setItem('reservaCheckin', checkinDate);
+            sessionStorage.setItem('reservaCheckout', checkoutDate);
+
+            updateReservationSummary(checkinDate, checkoutDate, finalAmount);
+
             document.getElementById('dateModal').style.display = 'none';
         } else {
             alert('Por favor, selecione datas válidas.');
         }
-    });
+});
+
+    function updateReservationSummary(checkinDate, checkoutDate, finalAmount) {
+        resumoReservaContainer.innerHTML = '';
+
+        var pCheckin = document.createElement('p');
+        pCheckin.textContent = 'Data de Check-in: ' + formatDate(checkinDate);
+        resumoReservaContainer.appendChild(pCheckin);
+
+        var pCheckout = document.createElement('p');
+        pCheckout.textContent = 'Data de Check-out: ' + formatDate(checkoutDate);
+        resumoReservaContainer.appendChild(pCheckout);
+
+        var pTotal = document.createElement('p');
+        pTotal.textContent = 'Total: R$ ' + finalAmount.toFixed(2);
+        resumoReservaContainer.appendChild(pTotal);
+    }
 
     function calculateNumberOfDays(checkinDate, checkoutDate) {
         var oneDay = 24 * 60 * 60 * 1000;
@@ -63,12 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var valorFinal = parseFloat(valorTotal.innerText.replace('R$', '').replace(',', '.'));
         var opcaoSelecionada = opcaoParcelar.value;
 
-        if (opcaoSelecionada === '1') {  // Opção: À Vista
-            var descontoAVista = 0.15;  // 15%
+        if (opcaoSelecionada === '1') {  
+            var descontoAVista = 0.15; 
             var valorComDesconto = valorFinal - (valorFinal * descontoAVista);
             valorParceladoFinal.innerText = 'R$ ' + valorComDesconto.toFixed(2);
-        } else if (opcaoSelecionada === '2') {  // Opção: Entrada
-            var valorEntrada = valorFinal * 0.25;  // 25%
+        } else if (opcaoSelecionada === '2') { 
+            var valorEntrada = valorFinal * 0.25;  
             valorParceladoFinal.innerText = 'R$ ' + valorEntrada.toFixed(2);
         }
     }
@@ -77,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function () {
         pagar();
     });
     pagar();
+
+    document.getElementById('actualPaymentForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita o envio padrão do formulário, pois você lidará com isso na função pagar()
+        pagar();
+    });  
 });
 
 
