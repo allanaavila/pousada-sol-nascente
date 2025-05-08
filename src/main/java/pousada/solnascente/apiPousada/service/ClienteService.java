@@ -6,11 +6,15 @@ import org.springframework.stereotype.Service;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.repository.ClienteRepository;
 
+
 @Service
 public class ClienteService {
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
+
+    public ClienteService(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
 
     public Cliente cadastrarCliente(Cliente cliente) {
         if (clienteRepository.findByEmail(cliente.getEmail()).isPresent()) {
