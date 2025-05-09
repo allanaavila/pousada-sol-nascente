@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/api_pousada/ApiPousadaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/api_pousada/ApiPousadaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +125,7 @@
       <workItem from="1746797617341" duration="312000" />
       <workItem from="1746811330450" duration="841000" />
       <workItem from="1746812251577" duration="4601000" />
-      <workItem from="1746822332069" duration="1804000" />
+      <workItem from="1746822332069" duration="3117000" />
     </task>
     <servers />
   </component>
