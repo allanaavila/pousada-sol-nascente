@@ -7,18 +7,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.service.ClienteService;
+import pousada.solnascente.apiPousada.service.ClienteServiceImpl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/v1/clientes")
 public class ClienteController {
 
     private final ClienteService clienteService;
 
-    @Autowired
     public ClienteController(ClienteService clienteService) {
         this.clienteService = clienteService;
     }
@@ -26,6 +26,7 @@ public class ClienteController {
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodosClientes() {
         List<Cliente> clientes = clienteService.listarTodosClientes();
+        // clienteDTO = clientes.toMap()  DT0 => Data Transfer Object (AutoMapper)
         return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
