@@ -7,6 +7,7 @@ import pousada.solnascente.apiPousada.expection.ValidacaoException;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.repository.ClienteRepository;
 import pousada.solnascente.apiPousada.util.CPFFormatter;
+import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,10 +18,12 @@ public class ClienteServiceImpl implements ClienteService {
 
     private final ClienteRepository clienteRepository;
     private final CPFFormatter cpfFormatter;
+    private final TelefoneFormatter telefoneFormatter;
 
-    public ClienteServiceImpl(ClienteRepository clienteRepository, CPFFormatter cpfFormatter) {
+    public ClienteServiceImpl(ClienteRepository clienteRepository, CPFFormatter cpfFormatter, TelefoneFormatter telefoneFormatter) {
         this.clienteRepository = clienteRepository;
         this.cpfFormatter = cpfFormatter;
+        this.telefoneFormatter = telefoneFormatter;
     }
 
     @Override
@@ -37,6 +40,12 @@ public class ClienteServiceImpl implements ClienteService {
             throw new ValidacaoException("cpf", "CPF inválido.");
         }
         cliente.setCpf(cpfFormatado);
+
+        if (!telefoneFormatter.isCelularValido(cliente.getTelefone())) {
+            throw new ValidacaoException("telefone", "Telefone celular inválido.");
+        }
+        cliente.setTelefone(telefoneFormatter.formatCelular(cliente.getTelefone()));
+
         cliente.setAtivo(true);
         return clienteRepository.save(cliente);
     }
@@ -72,7 +81,10 @@ public class ClienteServiceImpl implements ClienteService {
             clienteExistente.setCpf(cpfFormatado);
         }
         if (clienteAtualizado.getTelefone() != null) {
-            clienteExistente.setTelefone(clienteAtualizado.getTelefone());
+            if (!telefoneFormatter.isCelularValido(clienteAtualizado.getTelefone())) {
+                throw new ValidacaoException("telefone", "Telefone celular inválido.");
+            }
+            clienteExistente.setTelefone(telefoneFormatter.formatCelular(clienteAtualizado.getTelefone()));
         }
 
         return clienteRepository.save(clienteExistente);
@@ -92,6 +104,7 @@ public class ClienteServiceImpl implements ClienteService {
         clientes.forEach(cliente -> {
             String cpfFormatado = cpfFormatter.formatAndValidate(cliente.getCpf());
             cliente.setCpf(cpfFormatado);
+            cliente.setTelefone(telefoneFormatter.formatCelular(cliente.getTelefone()));
         });
         return clientes;
     }
