@@ -65,8 +65,9 @@ public class ClienteController {
                     clienteDTO.getTelefone(),
                     clienteDTO.isAtivo()
             );
+            clienteAtualizado.setId(id);
             Cliente clienteAlterado = clienteService.alterarCliente(id, clienteAtualizado);
-            return new ResponseEntity<>(clienteDTO.toDTO(clienteAlterado), HttpStatus.OK);
+            return new ResponseEntity<>(ClienteDTO.toDTO(clienteAlterado), HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (IllegalArgumentException e) {
