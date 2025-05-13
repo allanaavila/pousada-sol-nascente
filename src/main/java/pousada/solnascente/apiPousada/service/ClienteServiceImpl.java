@@ -7,6 +7,7 @@ import pousada.solnascente.apiPousada.expection.ValidacaoException;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.repository.ClienteRepository;
 import pousada.solnascente.apiPousada.util.CPFFormatter;
+import pousada.solnascente.apiPousada.util.EmailFormatter;
 import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
 import java.util.List;
@@ -19,11 +20,13 @@ public class ClienteServiceImpl implements ClienteService {
     private final ClienteRepository clienteRepository;
     private final CPFFormatter cpfFormatter;
     private final TelefoneFormatter telefoneFormatter;
+    private final EmailFormatter emailFormatter;
 
-    public ClienteServiceImpl(ClienteRepository clienteRepository, CPFFormatter cpfFormatter, TelefoneFormatter telefoneFormatter) {
+    public ClienteServiceImpl(ClienteRepository clienteRepository, CPFFormatter cpfFormatter, TelefoneFormatter telefoneFormatter, EmailFormatter emailFormatter) {
         this.clienteRepository = clienteRepository;
         this.cpfFormatter = cpfFormatter;
         this.telefoneFormatter = telefoneFormatter;
+        this.emailFormatter = emailFormatter;
     }
 
     @Override
@@ -31,6 +34,11 @@ public class ClienteServiceImpl implements ClienteService {
         if (clienteRepository.findByEmail(cliente.getEmail()).isPresent()) {
             throw new IllegalArgumentException("Email já cadastrado");
         }
+        if (!emailFormatter.isEmailValido(cliente.getEmail())) {
+            throw new ValidacaoException("email", "Formato de email inválido.");
+        }
+        cliente.setEmail(emailFormatter.formatToLowercase(cliente.getEmail()));
+
         if (clienteRepository.findByCpf(cliente.getCpf()).isPresent()) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
@@ -68,7 +76,10 @@ public class ClienteServiceImpl implements ClienteService {
             if (!clienteExistente.getEmail().equals(clienteAtualizado.getEmail()) && clienteRepository.findByEmail(clienteAtualizado.getEmail()).isPresent()) {
                 throw new IllegalArgumentException("Email já cadastrado");
             }
-            clienteExistente.setEmail(clienteAtualizado.getEmail());
+            if (!emailFormatter.isEmailValido(clienteAtualizado.getEmail())) {
+                throw new ValidacaoException("email", "Formato de email inválido.");
+            }
+            clienteExistente.setEmail(emailFormatter.formatToLowercase(clienteAtualizado.getEmail()));
         }
         if (clienteAtualizado.getCpf() != null) {
             if (!clienteExistente.getCpf().equals(clienteAtualizado.getCpf()) && clienteRepository.findByCpf(clienteAtualizado.getCpf()).isPresent()) {
@@ -105,6 +116,7 @@ public class ClienteServiceImpl implements ClienteService {
             String cpfFormatado = cpfFormatter.formatAndValidate(cliente.getCpf());
             cliente.setCpf(cpfFormatado);
             cliente.setTelefone(telefoneFormatter.formatCelular(cliente.getTelefone()));
+            cliente.setEmail(emailFormatter.formatToLowercase(cliente.getEmail()));
         });
         return clientes;
     }
