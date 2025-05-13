@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/ClienteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,6 +75,8 @@
 }</component>
   <component name="RunManager" selected="Spring Boot.ApiPousadaApplication">
     <configuration name="ApiPousadaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apiPousada" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pousada.solnascente.apiPousada.ApiPousadaApplication" />
@@ -94,6 +98,10 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Spring Boot.ApiPousadaApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApiPousadaApplication" />
@@ -136,7 +144,11 @@
       <workItem from="1746811330450" duration="841000" />
       <workItem from="1746812251577" duration="4601000" />
       <workItem from="1746822332069" duration="3733000" />
-      <workItem from="1746993557232" duration="3942000" />
+      <workItem from="1746993557232" duration="4066000" />
+      <workItem from="1747072339724" duration="5207000" />
+      <workItem from="1747082718381" duration="1432000" />
+      <workItem from="1747141999329" duration="287000" />
+      <workItem from="1747142300170" duration="6042000" />
     </task>
     <servers />
   </component>

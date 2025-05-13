@@ -2,23 +2,27 @@ version: '3.8'
 
 services:
   api_pousada:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - "8080:8080"
     depends_on:
-      - db
+      - pousada_db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3307/pousada_sol_nascente
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: "282308"
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: "282308"
-      MYSQL_DATABASE: pousada_sol_nascente
-    volumes:
-      - db_data:/var/lib/mysql
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/api_pousada
+      SPRING_DATASOURCE_USERNAME: allanaavila
+      SPRING_DATASOURCE_PASSWORD: 282308
+  pousada_db:
+    image: postgres:latest
     ports:
-      - "3307:3306"
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 282308
+      POSTGRES_USER: allanaavila
+      POSTGRES_DB: api_pousada
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
-  db_data:
+  postgres_data:

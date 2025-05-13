@@ -1,16 +1,16 @@
 package pousada.solnascente.apiPousada.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pousada.solnascente.apiPousada.controller.dto.ClienteDTO;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.service.ClienteService;
-import pousada.solnascente.apiPousada.service.ClienteServiceImpl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -24,33 +24,49 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Cliente>> listarTodosClientes() {
+    public ResponseEntity<List<ClienteDTO>> listarTodosClientes() {
         List<Cliente> clientes = clienteService.listarTodosClientes();
-        // clienteDTO = clientes.toMap()  DT0 => Data Transfer Object (AutoMapper)
-        return new ResponseEntity<>(clientes, HttpStatus.OK);
+        List<ClienteDTO> clienteDTOs = clientes.stream()
+                .map(ClienteDTO::toDTO)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(clienteDTOs, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> buscarClientePorId(@PathVariable Long id) {
+    public ResponseEntity<ClienteDTO> buscarClientePorId(@PathVariable Long id) {
         try {
             Cliente cliente = clienteService.buscarClientePorId(id);
-            return new ResponseEntity<>(cliente, HttpStatus.OK);
+            return new ResponseEntity<>(ClienteDTO.toDTO(cliente), HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> cadastrarCliente(@Valid @RequestBody Cliente cliente) {
+    public ResponseEntity<ClienteDTO> cadastrarCliente(@Valid @RequestBody ClienteDTO clienteDTO) {
+        Cliente cliente = new Cliente(
+                clienteDTO.getNome(),
+                clienteDTO.getEmail(),
+                clienteDTO.getCpf(),
+                clienteDTO.getTelefone(),
+                true
+        );
         Cliente clienteCadastrado = clienteService.cadastrarCliente(cliente);
-        return new ResponseEntity<>(clienteCadastrado, HttpStatus.CREATED);
+        return new ResponseEntity<>(clienteDTO.toDTO(clienteCadastrado), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> alterarCliente(@PathVariable Long id, @Valid @RequestBody Cliente clienteAtualizado) {
+    public ResponseEntity<ClienteDTO> alterarCliente(@PathVariable Long id, @Valid @RequestBody ClienteDTO clienteDTO) {
         try {
+            Cliente clienteAtualizado = new Cliente(
+                    clienteDTO.getNome(),
+                    clienteDTO.getEmail(),
+                    clienteDTO.getCpf(),
+                    clienteDTO.getTelefone(),
+                    clienteDTO.isAtivo()
+            );
             Cliente clienteAlterado = clienteService.alterarCliente(id, clienteAtualizado);
-            return new ResponseEntity<>(clienteAlterado, HttpStatus.OK);
+            return new ResponseEntity<>(clienteDTO.toDTO(clienteAlterado), HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (IllegalArgumentException e) {
@@ -67,6 +83,4 @@ public class ClienteController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-
 }
