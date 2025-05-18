@@ -1,9 +1,8 @@
-package pousada.solnascente.api_pousada;
+package pousada.solnascente.apiPousada;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import pousada.solnascente.apiPousada.ApiPousadaApplication;
 
 
 @SpringBootTest
