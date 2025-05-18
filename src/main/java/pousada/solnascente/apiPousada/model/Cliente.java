@@ -39,6 +39,6 @@ public class Cliente {
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
-        this.ativo = true;
+        this.ativo = ativo;
     }
 }

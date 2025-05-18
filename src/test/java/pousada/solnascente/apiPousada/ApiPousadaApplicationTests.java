@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import pousada.solnascente.apiPousada.ApiPousadaApplication;
 
 
-@SpringBootTest(classes = ApiPousadaApplication.class)
+@SpringBootTest
 @EnableAutoConfiguration
 class ApiPousadaApplicationTests {
 
