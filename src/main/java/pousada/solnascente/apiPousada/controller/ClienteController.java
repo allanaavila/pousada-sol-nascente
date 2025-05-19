@@ -27,7 +27,7 @@ public class ClienteController {
     public ResponseEntity<List<ClienteDTO>> listarTodosClientes() {
         List<Cliente> clientes = clienteService.listarTodosClientes();
         List<ClienteDTO> clienteDTOs = clientes.stream()
-                .map(ClienteDTO::toDTO)
+                .map(Cliente::toDTO)
                 .collect(Collectors.toList());
         return new ResponseEntity<>(clienteDTOs, HttpStatus.OK);
     }
@@ -36,7 +36,7 @@ public class ClienteController {
     public ResponseEntity<ClienteDTO> buscarClientePorId(@PathVariable Long id) {
         try {
             Cliente cliente = clienteService.buscarClientePorId(id);
-            return new ResponseEntity<>(ClienteDTO.toDTO(cliente), HttpStatus.OK);
+            return new ResponseEntity<>(cliente.toDTO(), HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -44,34 +44,22 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<ClienteDTO> cadastrarCliente(@Valid @RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = new Cliente(
-                clienteDTO.getNome(),
-                clienteDTO.getEmail(),
-                clienteDTO.getCpf(),
-                clienteDTO.getTelefone(),
-                true
-        );
+        Cliente cliente = new Cliente(clienteDTO);
         Cliente clienteCadastrado = clienteService.cadastrarCliente(cliente);
-        return new ResponseEntity<>(clienteDTO.toDTO(clienteCadastrado), HttpStatus.CREATED);
+        return new ResponseEntity<>(clienteCadastrado.toDTO(), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ClienteDTO> alterarCliente(@PathVariable Long id, @Valid @RequestBody ClienteDTO clienteDTO) {
         try {
-            Cliente clienteAtualizado = new Cliente(
-                    clienteDTO.getNome(),
-                    clienteDTO.getEmail(),
-                    clienteDTO.getCpf(),
-                    clienteDTO.getTelefone(),
-                    clienteDTO.isAtivo()
-            );
+            Cliente clienteAtualizado = new Cliente(clienteDTO);
             clienteAtualizado.setId(id);
             Cliente clienteAlterado = clienteService.alterarCliente(id, clienteAtualizado);
-            return new ResponseEntity<>(ClienteDTO.toDTO(clienteAlterado), HttpStatus.OK);
+            return new ResponseEntity<>(clienteAlterado.toDTO(), HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
