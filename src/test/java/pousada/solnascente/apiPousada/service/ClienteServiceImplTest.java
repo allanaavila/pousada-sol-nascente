@@ -14,6 +14,7 @@ import pousada.solnascente.apiPousada.util.CPFFormatter;
 import pousada.solnascente.apiPousada.util.EmailFormatter;
 import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -41,7 +42,6 @@ public class ClienteServiceImplTest {
 
     @BeforeEach
     void setup() {
-        //inicia os mocks
         MockitoAnnotations.openMocks(this);
     }
 
@@ -429,15 +429,61 @@ public class ClienteServiceImplTest {
     }
 
     //Testes do metodo listar todos os clientes
+    @Test
+    @DisplayName("Deve retornar lista de ClienteDTO formatados quando há clientes")
+    void testeListarTodosClientesComDados() {
+        Cliente cliente1 = new Cliente(1L, "Ana", "12345678901", "ANA@EMAIL.COM", "11999999999", true);
+        Cliente cliente2 = new Cliente(2L, "Bruno", "98765432100", "BRUNO@EMAIL.COM", "11988888888", false);
+        List<Cliente> clientes = List.of(cliente1, cliente2);
+
+        when(clienteRepository.findAll()).thenReturn(clientes);
+
+        when(cpfFormatter.formatAndValidate(cliente1.getCpf())).thenReturn("123.456.789-01");
+        when(cpfFormatter.formatAndValidate(cliente2.getCpf())).thenReturn("987.654.321-00");
+
+        when(telefoneFormatter.formatCelular(cliente1.getTelefone())).thenReturn("(11) 99999-9999");
+        when(telefoneFormatter.formatCelular(cliente2.getTelefone())).thenReturn("(11) 98888-8888");
+
+        when(emailFormatter.formatToLowercase(cliente1.getEmail())).thenReturn("ana@email.com");
+        when(emailFormatter.formatToLowercase(cliente2.getEmail())).thenReturn("bruno@email.com");
+
+        List<ClienteDTO> resultado = clienteService.listarTodosClientes();
+
+        assertEquals(2, resultado.size());
+
+        ClienteDTO dto1 = resultado.get(0);
+        assertEquals("Ana", dto1.nome());
+        assertEquals("123.456.789-01", dto1.cpf());
+        assertEquals("ana@email.com", dto1.email());
+        assertEquals("(11) 99999-9999", dto1.telefone());
+        assertTrue(dto1.ativo());
+
+        ClienteDTO dto2 = resultado.get(1);
+        assertEquals("Bruno", dto2.nome());
+        assertEquals("987.654.321-00", dto2.cpf());
+        assertEquals("bruno@email.com", dto2.email());
+        assertEquals("(11) 98888-8888", dto2.telefone());
+        assertFalse(dto2.ativo());
+
+        verify(clienteRepository).findAll();
+        verify(cpfFormatter, times(2)).formatAndValidate(anyString());
+        verify(telefoneFormatter, times(2)).formatCelular(anyString());
+        verify(emailFormatter, times(2)).formatToLowercase(anyString());
+    }
 
 
+    @Test
+    @DisplayName("Deve retornar lista vazia de ClienteDTO quando não há clientes")
+    void testeListarTodosClientesSemDados() {
+        when(clienteRepository.findAll()).thenReturn(List.of());
 
+        List<ClienteDTO> resultado = clienteService.listarTodosClientes();
 
-
-
-
-
-
-
+        assertTrue(resultado.isEmpty());
+        verify(clienteRepository).findAll();
+        verifyNoInteractions(cpfFormatter);
+        verifyNoInteractions(telefoneFormatter);
+        verifyNoInteractions(emailFormatter);
+    }
 
 }
