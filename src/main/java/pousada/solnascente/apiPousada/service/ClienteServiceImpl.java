@@ -3,6 +3,7 @@ package pousada.solnascente.apiPousada.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import pousada.solnascente.apiPousada.controller.dto.ClienteDTO;
 import pousada.solnascente.apiPousada.expection.ValidacaoException;
 import pousada.solnascente.apiPousada.model.Cliente;
 import pousada.solnascente.apiPousada.repository.ClienteRepository;
@@ -12,6 +13,7 @@ import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -30,31 +32,36 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente cadastrarCliente(Cliente cliente) {
-        if (clienteRepository.findByEmail(cliente.getEmail()).isPresent()) {
+    public Cliente cadastrarCliente(ClienteDTO clienteDTO ) {
+        if (clienteRepository.findByEmail(clienteDTO.email()).isPresent()) {
             throw new IllegalArgumentException("Email já cadastrado");
         }
-        if (!emailFormatter.isEmailValido(cliente.getEmail())) {
+        if (!emailFormatter.isEmailValido(clienteDTO.email())) {
             throw new ValidacaoException("email", "Formato de email inválido.");
         }
-        cliente.setEmail(emailFormatter.formatToLowercase(cliente.getEmail()));
+        String emailFormatado = emailFormatter.formatToLowercase(clienteDTO.email());
 
-        if (clienteRepository.findByCpf(cliente.getCpf()).isPresent()) {
+        if (clienteRepository.findByCpf(clienteDTO.cpf()).isPresent()) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
 
-        String cpfFormatado = cpfFormatter.formatAndValidate(cliente.getCpf());
+        String cpfFormatado = cpfFormatter.formatAndValidate(clienteDTO.cpf());
         if (cpfFormatado == null) {
             throw new ValidacaoException("cpf", "CPF inválido.");
         }
-        cliente.setCpf(cpfFormatado);
 
-        if (!telefoneFormatter.isCelularValido(cliente.getTelefone())) {
+        if (!telefoneFormatter.isCelularValido(clienteDTO.telefone())) {
             throw new ValidacaoException("telefone", "Telefone celular inválido.");
         }
-        cliente.setTelefone(telefoneFormatter.formatCelular(cliente.getTelefone()));
+        String telefoneFormatado = telefoneFormatter.formatCelular(clienteDTO.telefone());
 
+        Cliente cliente = new Cliente();
+        cliente.setNome(clienteDTO.nome());
+        cliente.setEmail(emailFormatado);
+        cliente.setCpf(cpfFormatado);
+        cliente.setTelefone(telefoneFormatado);
         cliente.setAtivo(true);
+
         return clienteRepository.save(cliente);
     }
 
@@ -66,36 +73,41 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Transactional
     @Override
-    public Cliente alterarCliente(Long id, Cliente clienteAtualizado) {
+    public Cliente alterarCliente(Long id, ClienteDTO clienteAtualizado) {
         Cliente clienteExistente = buscarClientePorId(id);
 
-        if (clienteAtualizado.getNome() != null) {
-            clienteExistente.setNome(clienteAtualizado.getNome());
+        if (clienteAtualizado.nome() != null) {
+            clienteExistente.setNome(clienteAtualizado.nome());
         }
-        if (clienteAtualizado.getEmail() != null) {
-            if (!clienteExistente.getEmail().equals(clienteAtualizado.getEmail()) && clienteRepository.findByEmail(clienteAtualizado.getEmail()).isPresent()) {
+
+        if (clienteAtualizado.email() != null) {
+            if (!clienteExistente.getEmail().equals(clienteAtualizado.email())
+                    && clienteRepository.findByEmail(clienteAtualizado.email()).isPresent()) {
                 throw new IllegalArgumentException("Email já cadastrado");
             }
-            if (!emailFormatter.isEmailValido(clienteAtualizado.getEmail())) {
+            if (!emailFormatter.isEmailValido(clienteAtualizado.email())) {
                 throw new ValidacaoException("email", "Formato de email inválido.");
             }
-            clienteExistente.setEmail(emailFormatter.formatToLowercase(clienteAtualizado.getEmail()));
+            clienteExistente.setEmail(emailFormatter.formatToLowercase(clienteAtualizado.email()));
         }
-        if (clienteAtualizado.getCpf() != null) {
-            if (!clienteExistente.getCpf().equals(clienteAtualizado.getCpf()) && clienteRepository.findByCpf(clienteAtualizado.getCpf()).isPresent()) {
+
+        if (clienteAtualizado.cpf() != null) {
+            if (!clienteExistente.getCpf().equals(clienteAtualizado.cpf())
+                    && clienteRepository.findByCpf(clienteAtualizado.cpf()).isPresent()) {
                 throw new IllegalArgumentException("CPF já cadastrado");
             }
-            String cpfFormatado = cpfFormatter.formatAndValidate(clienteAtualizado.getCpf());
+            String cpfFormatado = cpfFormatter.formatAndValidate(clienteAtualizado.cpf());
             if (cpfFormatado == null) {
                 throw new ValidacaoException("cpf", "CPF inválido.");
             }
             clienteExistente.setCpf(cpfFormatado);
         }
-        if (clienteAtualizado.getTelefone() != null) {
-            if (!telefoneFormatter.isCelularValido(clienteAtualizado.getTelefone())) {
+
+        if (clienteAtualizado.telefone() != null) {
+            if (!telefoneFormatter.isCelularValido(clienteAtualizado.telefone())) {
                 throw new ValidacaoException("telefone", "Telefone celular inválido.");
             }
-            clienteExistente.setTelefone(telefoneFormatter.formatCelular(clienteAtualizado.getTelefone()));
+            clienteExistente.setTelefone(telefoneFormatter.formatCelular(clienteAtualizado.telefone()));
         }
 
         return clienteRepository.save(clienteExistente);
@@ -105,19 +117,32 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public void desativarCliente(Long id) {
         Cliente clienteExistente = buscarClientePorId(id);
+
+        if (!clienteExistente.isAtivo()) {
+            return;
+        }
+
         clienteExistente.setAtivo(false);
         clienteRepository.save(clienteExistente);
     }
 
     @Override
-    public List<Cliente> listarTodosClientes() {
+    public List<ClienteDTO> listarTodosClientes() {
         List<Cliente> clientes = clienteRepository.findAll();
-        clientes.forEach(cliente -> {
-            String cpfFormatado = cpfFormatter.formatAndValidate(cliente.getCpf());
-            cliente.setCpf(cpfFormatado);
-            cliente.setTelefone(telefoneFormatter.formatCelular(cliente.getTelefone()));
-            cliente.setEmail(emailFormatter.formatToLowercase(cliente.getEmail()));
-        });
-        return clientes;
+        return clientes.stream()
+                .map(cliente -> {
+                    String cpfFormatado = cpfFormatter.formatAndValidate(cliente.getCpf());
+                    String telefoneFormatado = telefoneFormatter.formatCelular(cliente.getTelefone());
+                    String emailFormatado = emailFormatter.formatToLowercase(cliente.getEmail());
+                    return new ClienteDTO(
+                            cliente.getNome(),
+                            cpfFormatado,
+                            emailFormatado,
+                            telefoneFormatado,
+                            cliente.isAtivo()
+                    );
+                })
+                .collect(Collectors.toList());
     }
+
 }

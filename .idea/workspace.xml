@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,22 +117,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="deveRetornarVazioAoBuscarClientePorEmailInexistente" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ClienteRepositoryTest.testeAtualizarDadosDosClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
@@ -163,6 +149,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiPousadaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="apiPousada" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pousada.solnascente.apiPousada.ApiPousadaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml">
       <deployment type="docker-compose.yml">
         <settings>
@@ -174,18 +174,18 @@
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" />
       <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
       <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
       <item itemvalue="JUnit.ClienteRepositoryTest" />
+      <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ClienteRepositoryTest" />
+        <item itemvalue="Spring Boot.ApiPousadaApplication" />
         <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
         <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
         <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" />
       </list>
     </recent_temporary>
   </component>

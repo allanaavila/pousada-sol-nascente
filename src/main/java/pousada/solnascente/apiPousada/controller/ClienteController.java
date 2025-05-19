@@ -25,41 +25,35 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<ClienteDTO>> listarTodosClientes() {
-        List<Cliente> clientes = clienteService.listarTodosClientes();
-        List<ClienteDTO> clienteDTOs = clientes.stream()
-                .map(Cliente::toDTO)
-                .collect(Collectors.toList());
-        return new ResponseEntity<>(clienteDTOs, HttpStatus.OK);
+        List<ClienteDTO> clientesDTO = clienteService.listarTodosClientes();
+        return ResponseEntity.ok(clientesDTO);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ClienteDTO> buscarClientePorId(@PathVariable Long id) {
         try {
             Cliente cliente = clienteService.buscarClientePorId(id);
-            return new ResponseEntity<>(cliente.toDTO(), HttpStatus.OK);
+            return ResponseEntity.ok(cliente.toDTO());
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
 
     @PostMapping
     public ResponseEntity<ClienteDTO> cadastrarCliente(@Valid @RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = new Cliente(clienteDTO);
-        Cliente clienteCadastrado = clienteService.cadastrarCliente(cliente);
-        return new ResponseEntity<>(clienteCadastrado.toDTO(), HttpStatus.CREATED);
+        ClienteDTO clienteCadastrado = clienteService.cadastrarCliente(clienteDTO).toDTO();
+        return new ResponseEntity<>(clienteCadastrado, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ClienteDTO> alterarCliente(@PathVariable Long id, @Valid @RequestBody ClienteDTO clienteDTO) {
         try {
-            Cliente clienteAtualizado = new Cliente(clienteDTO);
-            clienteAtualizado.setId(id);
-            Cliente clienteAlterado = clienteService.alterarCliente(id, clienteAtualizado);
-            return new ResponseEntity<>(clienteAlterado.toDTO(), HttpStatus.OK);
+            ClienteDTO clienteAlterado = clienteService.alterarCliente(id, clienteDTO).toDTO();
+            return ResponseEntity.ok(clienteAlterado);
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         } catch (IllegalArgumentException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return ResponseEntity.badRequest().build();
         }
     }
 
@@ -67,9 +61,9 @@ public class ClienteController {
     public ResponseEntity<Void> desativarCliente(@PathVariable Long id) {
         try {
             clienteService.desativarCliente(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.noContent().build();
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
 }
