@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/ClienteControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/ClienteRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/ClienteRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/ClienteControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +45,28 @@
     "Application.ApiPousadaApplication.executor": "Run",
     "JUnit.ClienteControllerTest.executor": "Run",
     "JUnit.ClienteControllerTest.listarTodosClientes.executor": "Run",
+    "JUnit.ClienteControllerTest.testeAlterarClienteComDadosInvalidos.executor": "Run",
+    "JUnit.ClienteControllerTest.testeAlterarClienteComSucesso.executor": "Run",
+    "JUnit.ClienteControllerTest.testeAlterarClienteNaoEncontrado.executor": "Run",
+    "JUnit.ClienteControllerTest.testeBuscarClientePorIdComSucesso.executor": "Run",
+    "JUnit.ClienteControllerTest.testeBuscarClientePorIdNaoEncontrado.executor": "Run",
+    "JUnit.ClienteControllerTest.testeCadastrarClienteComCorpoInvalido.executor": "Run",
+    "JUnit.ClienteControllerTest.testeCadastrarClienteComDadosNulos.executor": "Run",
+    "JUnit.ClienteControllerTest.testeCadastrarClienteComEmailVazio.executor": "Run",
+    "JUnit.ClienteControllerTest.testeCadastrarClienteComSucesso.executor": "Run",
+    "JUnit.ClienteControllerTest.testeCadastrarClienteSemNome.executor": "Run",
+    "JUnit.ClienteControllerTest.testeContentTypeGetListarTodos.executor": "Run",
+    "JUnit.ClienteControllerTest.testeContentTypePostCadastrar.executor": "Run",
+    "JUnit.ClienteControllerTest.testeContentTypePutAlterar.executor": "Run",
+    "JUnit.ClienteControllerTest.testeDesativarClienteComSucesso.executor": "Run",
+    "JUnit.ClienteControllerTest.testeDesativarClienteNaoEncontrado.executor": "Run",
     "JUnit.ClienteControllerTest.testeErroInternoAoListarClientes.executor": "Run",
     "JUnit.ClienteControllerTest.testeListarClientesVazio.executor": "Run",
     "JUnit.ClienteControllerTest.testeListarTodosOsClientesSemClientes.executor": "Run",
+    "JUnit.ClienteControllerTest.testePostCadastrarComLocationHeader.executor": "Run",
+    "JUnit.ClienteControllerTest.testePostComCorpoVazio.executor": "Run",
+    "JUnit.ClienteControllerTest.testePostInvalidoEmEndpointPut.executor": "Run",
+    "JUnit.ClienteControllerTest.testePutComCorpoVazio.executor": "Run",
     "JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado.executor": "Run",
     "JUnit.ClienteRepositoryTest.deveRetornarClientePorCpf.executor": "Run",
     "JUnit.ClienteRepositoryTest.deveRetornarClientePorEmail.executor": "Run",
@@ -125,8 +140,8 @@
       <recent name="pousada.solnascente.apiPousada.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteControllerTest.testeListarTodosOsClientesSemClientes">
-    <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClienteControllerTest.testePutComCorpoVazio">
+    <configuration name="ClienteControllerTest.testeContentTypePutAlterar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -136,28 +151,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testeErroInternoAoListarClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeErroInternoAoListarClientes" />
+      <option name="METHOD_NAME" value="testeContentTypePutAlterar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteControllerTest.testeListarClientesVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteControllerTest.testePostCadastrarComLocationHeader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -167,13 +167,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeListarClientesVazio" />
+      <option name="METHOD_NAME" value="testePostCadastrarComLocationHeader" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteControllerTest.testeListarTodosOsClientesSemClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteControllerTest.testePostComCorpoVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -183,23 +183,40 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeListarTodosOsClientesSemClientes" />
+      <option name="METHOD_NAME" value="testePostComCorpoVazio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteControllerTest.testePostInvalidoEmEndpointPut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testePostInvalidoEmEndpointPut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteControllerTest.testePutComCorpoVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testePutComCorpoVazio" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,20 +239,20 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="JUnit.ClienteControllerTest" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeErroInternoAoListarClientes" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeListarClientesVazio" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeListarTodosOsClientesSemClientes" />
-      <item itemvalue="JUnit.ClienteServiceImplTest" />
+      <item itemvalue="JUnit.ClienteControllerTest.testeContentTypePutAlterar" />
+      <item itemvalue="JUnit.ClienteControllerTest.testePostCadastrarComLocationHeader" />
+      <item itemvalue="JUnit.ClienteControllerTest.testePostComCorpoVazio" />
+      <item itemvalue="JUnit.ClienteControllerTest.testePostInvalidoEmEndpointPut" />
+      <item itemvalue="JUnit.ClienteControllerTest.testePutComCorpoVazio" />
       <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteControllerTest.testeListarTodosOsClientesSemClientes" />
-        <item itemvalue="JUnit.ClienteControllerTest.testeErroInternoAoListarClientes" />
-        <item itemvalue="JUnit.ClienteControllerTest.testeListarClientesVazio" />
-        <item itemvalue="JUnit.ClienteControllerTest" />
-        <item itemvalue="JUnit.ClienteServiceImplTest" />
+        <item itemvalue="JUnit.ClienteControllerTest.testePutComCorpoVazio" />
+        <item itemvalue="JUnit.ClienteControllerTest.testePostComCorpoVazio" />
+        <item itemvalue="JUnit.ClienteControllerTest.testePostInvalidoEmEndpointPut" />
+        <item itemvalue="JUnit.ClienteControllerTest.testePostCadastrarComLocationHeader" />
+        <item itemvalue="JUnit.ClienteControllerTest.testeContentTypePutAlterar" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +302,7 @@
       <workItem from="1747659629411" duration="3341000" />
       <workItem from="1747685119547" duration="343000" />
       <workItem from="1747685482985" duration="282000" />
-      <workItem from="1747685788066" duration="1894000" />
+      <workItem from="1747685788066" duration="3692000" />
     </task>
     <servers />
   </component>
