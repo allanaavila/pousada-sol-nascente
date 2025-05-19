@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/application-test.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/ClienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/ClienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/model/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/ClienteRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/ClienteRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,40 +39,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiPousadaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteRepositoryTest.testEmailDuplicado.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteRepositoryTest.testUpdateCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;Database connection parameters found&quot;,
-    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiPousadaApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiPousadaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/endpoint-cliente-test&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/allana/OneDrive/Documentos/apiPousada/apiPousada&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiPousadaApplication.executor": "Run",
+    "JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado.executor": "Run",
+    "JUnit.ClienteRepositoryTest.deveRetornarClientePorCpf.executor": "Run",
+    "JUnit.ClienteRepositoryTest.deveRetornarClientePorEmail.executor": "Run",
+    "JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
+    "JUnit.ClienteRepositoryTest.deveSalvarEBuscarClientePorId.executor": "Run",
+    "JUnit.ClienteRepositoryTest.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testEmailDuplicado.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testFindAll.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testUpdateCliente.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testeDeletarPorLote.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testeExcluirPorID.executor": "Run",
+    "JUnit.ClienteRepositoryTest.testeSalvarTodosELiberar.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiPousadaApplication (1).executor": "Run",
+    "Spring Boot.ApiPousadaApplication.executor": "Run",
+    "git-widget-placeholder": "feature/endpoint-cliente-test",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/allana/OneDrive/Documentos/apiPousada/apiPousada",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Spring Boot.ApiPousadaApplication">
+}]]></component>
+  <component name="RunManager" selected="JUnit.ClienteRepositoryTest">
     <configuration name="ClienteRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
@@ -92,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteRepositoryTest.testEmailDuplicado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="testEmailDuplicado" />
+      <option name="METHOD_NAME" value="deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteRepositoryTest.testUpdateCliente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -118,24 +125,40 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="testUpdateCliente" />
+      <option name="METHOD_NAME" value="deveRetornarVazioAoBuscarClientePorEmailInexistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiPousadaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="ClienteRepositoryTest.testeAtualizarDadosDosClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pousada.solnascente.apiPousada.ApiPousadaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
+      <option name="METHOD_NAME" value="testeAtualizarDadosDosClientes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteRepositoryTest.testeEncontrarClientesAtivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
+      <option name="METHOD_NAME" value="testeEncontrarClientesAtivos" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,17 +173,19 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
+      <item itemvalue="JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" />
+      <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
+      <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
       <item itemvalue="JUnit.ClienteRepositoryTest" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.testEmailDuplicado" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.testUpdateCliente" />
-      <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiPousadaApplication" />
         <item itemvalue="JUnit.ClienteRepositoryTest" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.testUpdateCliente" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.testEmailDuplicado" />
+        <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
+        <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
+        <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
+        <item itemvalue="JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente" />
       </list>
     </recent_temporary>
   </component>
