@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +56,24 @@
     "JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos.executor": "Run",
     "JUnit.ClienteRepositoryTest.testeExcluirPorID.executor": "Run",
     "JUnit.ClienteRepositoryTest.testeSalvarTodosELiberar.executor": "Run",
+    "JUnit.ClienteServiceImplTest.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarApenasONome.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarCpfInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarCpfJaExistente.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarEmailInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarEmailJaExistente.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarTelefoneInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeAlterarTodosOsCampos.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroComCpfExistente.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroComCpfInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroComEmailExistente.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroComEmailInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroComTelefoneInvalido.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeCadastroDoCliente.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeDesativarClienteAtivo.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeDesativarClienteJaDesativado.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeLancarExecucaoQuandoIdNaoExistir.executor": "Run",
+    "JUnit.ClienteServiceImplTest.testeRetornarClientePorIdExistente.executor": "Run",
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
     "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
     "RequestMappingsPanelOrder0": "0",
@@ -85,80 +101,83 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ClienteRepositoryTest">
-    <configuration name="ClienteRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorId">
+    <configuration name="ClienteServiceImplTest.testeAlterarTelefoneInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
+      <option name="METHOD_NAME" value="testeAlterarTelefoneInvalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteRepositoryTest.testeAtualizarDadosDosClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteServiceImplTest.testeDesativarClienteAtivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="testeAtualizarDadosDosClientes" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
+      <option name="METHOD_NAME" value="testeDesativarClienteAtivo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteRepositoryTest.testeEncontrarClientesAtivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteServiceImplTest.testeDesativarClienteInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="METHOD_NAME" value="testeEncontrarClientesAtivos" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
+      <option name="METHOD_NAME" value="testeDesativarClienteInexistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiPousadaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="ClienteServiceImplTest.testeDesativarClienteJaDesativado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pousada.solnascente.apiPousada.ApiPousadaApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
+      <option name="METHOD_NAME" value="testeDesativarClienteJaDesativado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
+      <option name="METHOD_NAME" value="testeVerificarChamadaBuscarClientePorId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,19 +192,19 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
-      <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
-      <item itemvalue="JUnit.ClienteRepositoryTest" />
-      <item itemvalue="Spring Boot.ApiPousadaApplication" />
+      <item itemvalue="JUnit.ClienteServiceImplTest.testeAlterarTelefoneInvalido" />
+      <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteAtivo" />
+      <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteInexistente" />
+      <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteJaDesativado" />
+      <item itemvalue="JUnit.ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorId" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteRepositoryTest" />
-        <item itemvalue="Spring Boot.ApiPousadaApplication" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos" />
-        <item itemvalue="JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado" />
+        <item itemvalue="JUnit.ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorId" />
+        <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteInexistente" />
+        <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteJaDesativado" />
+        <item itemvalue="JUnit.ClienteServiceImplTest.testeDesativarClienteAtivo" />
+        <item itemvalue="JUnit.ClienteServiceImplTest.testeAlterarTelefoneInvalido" />
       </list>
     </recent_temporary>
   </component>
