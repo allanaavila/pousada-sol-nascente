@@ -342,6 +342,43 @@ class ClienteControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
+    //testes do metodo PUT - reativar cliente
+    @Test
+    @DisplayName("Deve reativar cliente com sucesso e retornar status 204")
+    void testeReativarClienteComSucesso() throws Exception {
+        Long id = 1L;
+        doNothing().when(clienteService).reativarCliente(id);
+
+        mockMvc.perform(put("/v1/clientes/{id}/reativar", id))
+                .andExpect(status().isNoContent());
+
+        verify(clienteService).reativarCliente(id);
+        verifyNoMoreInteractions(clienteService);
+    }
+
+    @Test
+    @DisplayName("Deve retornar status 404 ao tentar reativar cliente inexistente")
+    void testeReativarClienteNaoEncontrado() throws Exception {
+        Long id = 100L;
+        doThrow(NoSuchElementException.class).when(clienteService).reativarCliente(id);
+
+        mockMvc.perform(put("/v1/clientes/{id}/reativar", id))
+                .andExpect(status().isNotFound());
+
+        verify(clienteService).reativarCliente(id);
+        verifyNoMoreInteractions(clienteService);
+    }
+
+    @Test
+    @DisplayName("Deve retornar 405 Method Not Allowed para POST em /{id}/reativar")
+    void testeReativarClienteMethodNotAllowed() throws Exception {
+        Long id = 1L;
+        mockMvc.perform(post("/v1/clientes/{id}/reativar", id))
+                .andExpect(status().isMethodNotAllowed());
+
+        verifyNoInteractions(clienteService);
+    }
+
     //testes do metodo DELETE - desativar cliente
 
     @Test

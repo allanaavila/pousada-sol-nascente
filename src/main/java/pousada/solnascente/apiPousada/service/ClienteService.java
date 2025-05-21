@@ -11,4 +11,5 @@ public interface ClienteService {
     public Cliente alterarCliente(Long id, ClienteDTO clienteAtualizado);
     public void desativarCliente(Long id);
     public List<ClienteDTO> listarTodosClientes();
+    public void reativarCliente(Long id);
 }

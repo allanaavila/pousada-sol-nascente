@@ -56,6 +56,16 @@ public class ClienteController {
         }
     }
 
+    @PutMapping("/{id}/reativar")
+    public ResponseEntity<Void> reativarCliente(@PathVariable Long id) {
+        try {
+            clienteService.reativarCliente(id);
+            return ResponseEntity.noContent().build();
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> desativarCliente(@PathVariable Long id) {
         try {

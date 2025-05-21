@@ -363,6 +363,71 @@ public class ClienteServiceImplTest {
         verify(clienteRepository, never()).save(any());
     }
 
+    //teste reativar cliente
+    @Test
+    @DisplayName("Deve reativar cliente inativo")
+    void testeReativarClienteInativo() {
+        Long id = 1L;
+        Cliente clienteInativo = new Cliente();
+        clienteInativo.setId(id);
+        clienteInativo.setAtivo(false);
+
+        when(clienteRepository.findById(id)).thenReturn(Optional.of(clienteInativo));
+        when(clienteRepository.save(any(Cliente.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        clienteService.reativarCliente(id);
+
+        assertTrue(clienteInativo.isAtivo());
+        verify(clienteRepository).save(clienteInativo);
+    }
+
+    @Test
+    @DisplayName("Não deve reativar cliente já ativo")
+    void testeReativarClienteJaAtivo() {
+        Long id = 1L;
+        Cliente clienteAtivo = new Cliente();
+        clienteAtivo.setId(id);
+        clienteAtivo.setAtivo(true);
+
+        when(clienteRepository.findById(id)).thenReturn(Optional.of(clienteAtivo));
+
+        clienteService.reativarCliente(id);
+
+        assertTrue(clienteAtivo.isAtivo());
+        verify(clienteRepository, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Deve lançar NoSuchElementException ao tentar reativar cliente inexistente")
+    void testeReativarClienteInexistente() {
+        Long id = 1L;
+        when(clienteRepository.findById(id)).thenReturn(Optional.empty());
+
+        NoSuchElementException exception = assertThrows(NoSuchElementException.class, () -> {
+            clienteService.reativarCliente(id);
+        });
+
+        assertEquals("Cliente não encontrado com o ID: " + id, exception.getMessage());
+        verify(clienteRepository, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Deve chamar buscarClientePorId ao reativar cliente")
+    void testeVerificarChamadaBuscarClientePorIdAoReativar() {
+        Long id = 1L;
+        Cliente cliente = new Cliente();
+        cliente.setId(id);
+        cliente.setAtivo(false);
+
+        when(clienteRepository.findById(id)).thenReturn(Optional.of(cliente));
+        when(clienteRepository.save(any())).thenReturn(cliente);
+
+        clienteService.reativarCliente(id);
+
+        verify(clienteRepository).findById(id);
+    }
+
+
     //Testes para o metodo desativarCliente
 
     @Test
