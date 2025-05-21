@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api_pousada:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - pousada_db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/api_pousada
+      SPRING_DATASOURCE_USERNAME: allanaavila
+      SPRING_DATASOURCE_PASSWORD: 282308
+  pousada_db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 282308
+      POSTGRES_USER: allanaavila
+      POSTGRES_DB: api_pousada
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
