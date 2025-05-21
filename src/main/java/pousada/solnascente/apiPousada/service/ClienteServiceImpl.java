@@ -145,4 +145,17 @@ public class ClienteServiceImpl implements ClienteService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    @Override
+    public void reativarCliente(Long id) {
+        Cliente cliente = buscarClientePorId(id);
+
+        if (cliente.isAtivo()) {
+            return;
+        }
+
+        cliente.setAtivo(true);
+        clienteRepository.save(cliente);
+    }
+
 }

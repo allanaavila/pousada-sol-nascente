@@ -10,7 +10,6 @@ import pousada.solnascente.apiPousada.service.ClienteService;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 
 @RestController
@@ -54,6 +53,16 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping("/{id}/reativar")
+    public ResponseEntity<Void> reativarCliente(@PathVariable Long id) {
+        try {
+            clienteService.reativarCliente(id);
+            return ResponseEntity.noContent().build();
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
         }
     }
 
