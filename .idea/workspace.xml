@@ -4,31 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="" />
-=======
-    <list default="true" id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="">
+    <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pousada-sol-nascente" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/ApiPousadaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/ApiPousadaApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/ClienteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/ClienteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/ClienteControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/ClienteServiceImplTest.java" afterDir="false" />
     </list>
->>>>>>> feature/endpoint-cliente-test
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,196 +33,27 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2woX2kdHOdNSafsbYbRVJwnSffx" />
+  <component name="ProjectId" id="2xPNMxyrMVv0WnU2gwpZ8tEqi91" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiPousadaApplication.executor": "Run",
-    "JUnit.ClienteControllerTest.executor": "Run",
-    "JUnit.ClienteControllerTest.listarTodosClientes.executor": "Run",
-    "JUnit.ClienteControllerTest.testeAlterarClienteComDadosInvalidos.executor": "Run",
-    "JUnit.ClienteControllerTest.testeAlterarClienteComSucesso.executor": "Run",
-    "JUnit.ClienteControllerTest.testeAlterarClienteNaoEncontrado.executor": "Run",
-    "JUnit.ClienteControllerTest.testeBuscarClientePorIdComSucesso.executor": "Run",
-    "JUnit.ClienteControllerTest.testeBuscarClientePorIdNaoEncontrado.executor": "Run",
-    "JUnit.ClienteControllerTest.testeCadastrarClienteComCorpoInvalido.executor": "Run",
-    "JUnit.ClienteControllerTest.testeCadastrarClienteComDadosNulos.executor": "Run",
-    "JUnit.ClienteControllerTest.testeCadastrarClienteComEmailVazio.executor": "Run",
-    "JUnit.ClienteControllerTest.testeCadastrarClienteComSucesso.executor": "Run",
-    "JUnit.ClienteControllerTest.testeCadastrarClienteSemNome.executor": "Run",
-    "JUnit.ClienteControllerTest.testeContentTypeGetListarTodos.executor": "Run",
-    "JUnit.ClienteControllerTest.testeContentTypePostCadastrar.executor": "Run",
-    "JUnit.ClienteControllerTest.testeContentTypePutAlterar.executor": "Run",
-    "JUnit.ClienteControllerTest.testeDesativarClienteComSucesso.executor": "Run",
-    "JUnit.ClienteControllerTest.testeDesativarClienteNaoEncontrado.executor": "Run",
-    "JUnit.ClienteControllerTest.testeErroInternoAoListarClientes.executor": "Run",
-    "JUnit.ClienteControllerTest.testeListarClientesVazio.executor": "Run",
-    "JUnit.ClienteControllerTest.testeListarTodosOsClientesSemClientes.executor": "Run",
-    "JUnit.ClienteControllerTest.testePostCadastrarComLocationHeader.executor": "Run",
-    "JUnit.ClienteControllerTest.testePostComCorpoVazio.executor": "Run",
-    "JUnit.ClienteControllerTest.testePostInvalidoEmEndpointPut.executor": "Run",
-    "JUnit.ClienteControllerTest.testePutComCorpoVazio.executor": "Run",
-    "JUnit.ClienteRepositoryTest.deveLancarExcecaoAoSalvarClienteComEmailDuplicado.executor": "Run",
-    "JUnit.ClienteRepositoryTest.deveRetornarClientePorCpf.executor": "Run",
-    "JUnit.ClienteRepositoryTest.deveRetornarClientePorEmail.executor": "Run",
-    "JUnit.ClienteRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
-    "JUnit.ClienteRepositoryTest.deveSalvarEBuscarClientePorId.executor": "Run",
-    "JUnit.ClienteRepositoryTest.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testEmailDuplicado.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testFindAll.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testUpdateCliente.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testeAtualizarDadosDosClientes.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testeDeletarPorLote.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testeEncontrarClientesAtivos.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testeExcluirPorID.executor": "Run",
-    "JUnit.ClienteRepositoryTest.testeSalvarTodosELiberar.executor": "Run",
-    "JUnit.ClienteServiceImplTest.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarApenasONome.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarCpfInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarCpfJaExistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarEmailInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarEmailJaExistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarTelefoneInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeAlterarTodosOsCampos.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroComCpfExistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroComCpfInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroComEmailExistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroComEmailInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroComTelefoneInvalido.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeCadastroDoCliente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeDesativarClienteAtivo.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeDesativarClienteInexistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeDesativarClienteJaDesativado.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeLancarExecucaoQuandoIdNaoExistir.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeListarTodosClientesComDados.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeListarTodosClientesSemDados.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeReativarClienteInativo.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeReativarClienteInexistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeReativarClienteJaAtivo.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeRetornarClientePorIdExistente.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorId.executor": "Run",
-    "JUnit.ClienteServiceImplTest.testeVerificarChamadaBuscarClientePorIdAoReativar.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
-    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ApiPousadaApplication (1).executor": "Run",
-    "Spring Boot.ApiPousadaApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "feature/endpoint-cliente-test",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/allana/OneDrive/Documentos/apiPousada/apiPousada",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/allana/OneDrive/Documentos/apiPousada/apiPousada&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="pousada.solnascente.apiPousada.controller" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.ClienteControllerTest">
-    <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testeReativarClienteComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeReativarClienteComSucesso" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testeReativarClienteMethodNotAllowed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeReativarClienteMethodNotAllowed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testeReativarClienteNaoEncontrado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testeReativarClienteNaoEncontrado" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager">
     <configuration name="ApiPousadaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apiPousada" />
@@ -239,32 +62,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteComSucesso" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteMethodNotAllowed" />
-      <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteNaoEncontrado" />
-      <item itemvalue="JUnit.ClienteServiceImplTest" />
-      <item itemvalue="JUnit.ClienteControllerTest" />
-      <item itemvalue="Spring Boot.ApiPousadaApplication" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.ClienteControllerTest" />
-        <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteMethodNotAllowed" />
-        <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteNaoEncontrado" />
-        <item itemvalue="JUnit.ClienteControllerTest.testeReativarClienteComSucesso" />
-        <item itemvalue="JUnit.ClienteServiceImplTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -274,48 +71,15 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="359bc958-4853-4de6-a2f1-fe04ecd12896" name="Changes" comment="" />
-      <created>1746708694159</created>
+      <changelist id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="" />
+      <created>1747835706174</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1746708694159</updated>
-      <workItem from="1746708695215" duration="1236000" />
-      <workItem from="1746716625946" duration="105000" />
-      <workItem from="1746716766061" duration="3046000" />
-      <workItem from="1746725978145" duration="296000" />
-      <workItem from="1746726306344" duration="2000" />
-      <workItem from="1746726323953" duration="949000" />
-      <workItem from="1746727320300" duration="1056000" />
-      <workItem from="1746728396906" duration="213000" />
-      <workItem from="1746728623923" duration="323000" />
-      <workItem from="1746732726508" duration="65000" />
-      <workItem from="1746732818243" duration="177000" />
-      <workItem from="1746733422610" duration="142000" />
-      <workItem from="1746733584894" duration="1325000" />
-      <workItem from="1746792462925" duration="3375000" />
-      <workItem from="1746796470166" duration="13000" />
-      <workItem from="1746796493704" duration="4000" />
-      <workItem from="1746797617341" duration="312000" />
-      <workItem from="1746811330450" duration="841000" />
-      <workItem from="1746812251577" duration="4601000" />
-      <workItem from="1746822332069" duration="3733000" />
-      <workItem from="1746993557232" duration="4066000" />
-      <workItem from="1747072339724" duration="5207000" />
-      <workItem from="1747082718381" duration="1432000" />
-      <workItem from="1747141999329" duration="287000" />
-      <workItem from="1747142300170" duration="13295000" />
-      <workItem from="1747593875298" duration="54000" />
-      <workItem from="1747593944627" duration="5831000" />
-      <workItem from="1747659629411" duration="3341000" />
-      <workItem from="1747685119547" duration="343000" />
-      <workItem from="1747685482985" duration="282000" />
-      <workItem from="1747685788066" duration="5166000" />
-      <workItem from="1747745014877" duration="2573000" />
-      <workItem from="1747833633669" duration="36000" />
-      <workItem from="1747833686504" duration="1011000" />
+      <updated>1747835706174</updated>
+      <workItem from="1747835707894" duration="269000" />
+      <workItem from="1747835998002" duration="253000" />
     </task>
     <servers />
   </component>

@@ -1,28 +1,16 @@
 package pousada.solnascente.apiPousada.model;
 
 import jakarta.persistence.*;
-<<<<<<< HEAD
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Entity
-=======
 import lombok.*;
 import pousada.solnascente.apiPousada.controller.dto.ClienteDTO;
 
 @Entity(name = "cliente")
->>>>>>> feature/endpoint-cliente
 @Table(name = "cliente", schema = "public")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-<<<<<<< HEAD
-=======
 @EqualsAndHashCode(of="id")
->>>>>>> feature/endpoint-cliente
 public class Cliente {
 
     @Id
@@ -45,16 +33,6 @@ public class Cliente {
     @Column(nullable = false)
     private boolean ativo;
 
-<<<<<<< HEAD
-    public Cliente(String nome, String email, String cpf, String telefone, boolean ativo) {
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.ativo = true;
-    }
-}
-=======
     public Cliente(ClienteDTO clienteDTO) {
         this.nome = clienteDTO.nome();
         this.cpf = clienteDTO.cpf();
@@ -72,4 +50,3 @@ public class Cliente {
                 this.ativo);
     }
 }
->>>>>>> feature/endpoint-cliente
