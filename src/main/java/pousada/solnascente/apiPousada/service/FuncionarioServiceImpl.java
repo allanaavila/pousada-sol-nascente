@@ -18,11 +18,14 @@ import java.util.stream.Collectors;
 public class FuncionarioServiceImpl implements FuncionarioService{
 
     private final FuncionarioRepository funcionarioRepository;
+    private final CPFFormatter cpfFormatter;
     private final TelefoneFormatter telefoneFormatter;
     private final EmailFormatter emailFormatter;
-    private final CPFFormatter cpfFormatter;
 
-    public FuncionarioServiceImpl(FuncionarioRepository funcionarioRepository, TelefoneFormatter telefoneFormatter, EmailFormatter emailFormatter, CPFFormatter cpfFormatter) {
+    public FuncionarioServiceImpl(FuncionarioRepository funcionarioRepository,
+                                  TelefoneFormatter telefoneFormatter,
+                                  EmailFormatter emailFormatter,
+                                  CPFFormatter cpfFormatter) {
         this.funcionarioRepository = funcionarioRepository;
         this.telefoneFormatter = telefoneFormatter;
         this.emailFormatter = emailFormatter;
@@ -30,12 +33,13 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     }
 
 
-    @Transactional
     @Override
     public Funcionario cadastrarFuncionario(FuncionarioDTO funcionarioDTO) {
-        if(!emailFormatter.isEmailValido(funcionarioDTO.email())) {
+
+        if (funcionarioRepository.findByEmail(funcionarioDTO.email()).isPresent()) {
             throw new IllegalArgumentException("Email já cadastrado");
         }
+
         if (!emailFormatter.isEmailValido(funcionarioDTO.email())) {
             throw new ValidacaoException("email", "Formato de email inválido.");
         }
@@ -54,6 +58,7 @@ public class FuncionarioServiceImpl implements FuncionarioService{
             throw new ValidacaoException("telefone", "Telefone celular inválido.");
         }
         String telefoneFormatado = telefoneFormatter.formatCelular(funcionarioDTO.telefone());
+
 
         Funcionario funcionario = new Funcionario();
         funcionario.setNome(funcionarioDTO.nome());
@@ -78,48 +83,41 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     public Funcionario alterarFuncionario(Long id, FuncionarioDTO funcionarioAtualizado) {
         Funcionario funcionarioExistente = buscarFuncionarioPorId(id);
 
-        if (funcionarioAtualizado.nome() != null && !funcionarioAtualizado.nome().isBlank()) {
+        if (funcionarioAtualizado.nome() != null) {
             funcionarioExistente.setNome(funcionarioAtualizado.nome());
         }
 
-        if (funcionarioAtualizado.email() != null && !funcionarioAtualizado.email().isBlank()) {
+        if (funcionarioAtualizado.email() != null) {
+            if (!funcionarioExistente.getEmail().equals(funcionarioAtualizado.email())
+                    && funcionarioRepository.findByEmail(funcionarioAtualizado.email()).isPresent()) {
+                throw new IllegalArgumentException("Email já cadastrado");
+            }
             if (!emailFormatter.isEmailValido(funcionarioAtualizado.email())) {
-                throw new ValidacaoException("email", "Formato de e-mail inválido.");
+                throw new ValidacaoException("email", "Formato de email inválido.");
             }
-            String emailFormatado = emailFormatter.formatToLowercase(funcionarioAtualizado.email());
-            if (!funcionarioExistente.getEmail().equalsIgnoreCase(emailFormatado) &&
-                    funcionarioRepository.findByEmail(emailFormatado).isPresent()) {
-                throw new IllegalArgumentException("E-mail já cadastrado.");
-            }
-            funcionarioExistente.setEmail(emailFormatado);
+            funcionarioExistente.setEmail(emailFormatter.formatToLowercase(funcionarioAtualizado.email()));
         }
-        if (funcionarioAtualizado.cpf() != null && !funcionarioAtualizado.cpf().isBlank()) {
+
+
+        if (funcionarioAtualizado.cpf() != null) {
+            if (!funcionarioExistente.getCpf().equals(funcionarioAtualizado.cpf())
+                    && funcionarioRepository.findByCpf(funcionarioAtualizado.cpf()).isPresent()) {
+                throw new IllegalArgumentException("CPF já cadastrado");
+            }
             String cpfFormatado = cpfFormatter.formatAndValidate(funcionarioAtualizado.cpf());
             if (cpfFormatado == null) {
                 throw new ValidacaoException("cpf", "CPF inválido.");
             }
-            if (!funcionarioExistente.getCpf().equals(cpfFormatado) &&
-                    funcionarioRepository.findByCpf(cpfFormatado).isPresent()) {
-                throw new IllegalArgumentException("CPF já cadastrado.");
-            }
             funcionarioExistente.setCpf(cpfFormatado);
         }
-        if (funcionarioAtualizado.telefone() != null && !funcionarioAtualizado.telefone().isBlank()) {
+
+
+        if (funcionarioAtualizado.telefone() != null) {
             if (!telefoneFormatter.isCelularValido(funcionarioAtualizado.telefone())) {
-                throw new ValidacaoException("telefone", "Formato de telefone inválido.");
+                throw new ValidacaoException("telefone", "Telefone celular inválido.");
             }
             funcionarioExistente.setTelefone(telefoneFormatter.formatCelular(funcionarioAtualizado.telefone()));
         }
-
-        if (funcionarioAtualizado.cargo() != null && !funcionarioAtualizado.cargo().isBlank()) {
-            funcionarioExistente.setCargo(funcionarioAtualizado.cargo());
-        }
-
-        if (funcionarioAtualizado.perfil() != null) {
-            funcionarioExistente.setPerfil(funcionarioAtualizado.perfil());
-        }
-
-        funcionarioExistente.setAtivo(funcionarioAtualizado.ativo());
 
         return funcionarioRepository.save(funcionarioExistente);
     }
@@ -128,34 +126,40 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     @Override
     public void desativarFuncionario(Long id) {
         Funcionario funcionarioExistente = buscarFuncionarioPorId(id);
-        if (funcionarioExistente.isAtivo()) {
-            funcionarioExistente.setAtivo(false);
-            funcionarioRepository.save(funcionarioExistente);
+
+        if (!funcionarioExistente.isAtivo()) {
+            return;
         }
+
+        funcionarioExistente.setAtivo(false);
+        funcionarioRepository.save(funcionarioExistente);
     }
 
     @Transactional
     @Override
     public void reativarFuncionario(Long id) {
-        Funcionario funcionarioExistente = buscarFuncionarioPorId(id);
-        if (!funcionarioExistente.isAtivo()) {
-            funcionarioExistente.setAtivo(true);
-            funcionarioRepository.save(funcionarioExistente);
+        Funcionario funcionario = buscarFuncionarioPorId(id);
+
+        if (funcionario.isAtivo()) {
+            return;
         }
+
+        funcionario.setAtivo(true);
+        funcionarioRepository.save(funcionario);
     }
 
     @Override
     public List<FuncionarioDTO> listarTodosFuncionarios() {
-        return funcionarioRepository.findAll().stream()
+        List<Funcionario> funcionarios = funcionarioRepository.findAll();
+        return funcionarios.stream()
                 .map(funcionario -> {
                     String cpfFormatado = cpfFormatter.formatAndValidate(funcionario.getCpf());
                     String telefoneFormatado = telefoneFormatter.formatCelular(funcionario.getTelefone());
                     String emailFormatado = emailFormatter.formatToLowercase(funcionario.getEmail());
-
                     return new FuncionarioDTO(
                             funcionario.getNome(),
-                            cpfFormatado,
                             emailFormatado,
+                            cpfFormatado,
                             telefoneFormatado,
                             funcionario.getCargo(),
                             funcionario.getPerfil(),

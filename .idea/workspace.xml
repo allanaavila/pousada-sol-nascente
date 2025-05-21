@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/FuncionarioDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/FuncionarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/ApiPousadaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/ApiPousadaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/FuncionarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/controller/dto/FuncionarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/FuncionarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/service/FuncionarioServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +20,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Record" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

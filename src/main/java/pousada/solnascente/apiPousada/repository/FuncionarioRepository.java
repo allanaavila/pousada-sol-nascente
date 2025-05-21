@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
-    Optional<Cliente> findByEmail(String email);
-    Optional<Cliente> findByCpf(String cpf);
-    List<Cliente> findByAtivoTrue();
+    Optional<Funcionario> findByEmail(String email);
+    Optional<Funcionario> findByCpf(String cpf);
+    List<Funcionario> findByAtivoTrue();
 }
