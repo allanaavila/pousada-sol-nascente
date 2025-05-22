@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/FuncionarioRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/FuncionarioRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/FuncionarioServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/service/FuncionarioServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +54,13 @@
     "JUnit.FuncionarioRepositoryTest.testeRetornarFuncionarioPorCpf.executor": "Run",
     "JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
     "JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario1.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario2.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario3.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario4.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario5.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario6.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenarioErroRepository.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
     "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
@@ -78,82 +83,82 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo">
-    <configuration name="FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenarioErroRepository">
+    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeAtualizarDadosDosFuncionarios" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeCadastrarFuncionarioCenario3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeEncontrarFuncionariosAtivos" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeCadastrarFuncionarioCenario4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeCadastrarFuncionarioCenario5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeRetornarFuncionariosPorCargo" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeCadastrarFuncionarioCenario6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioCenarioErroRepository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeRetornarVazioAoBuscarClientePorEmailInexistente" />
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeCadastrarFuncionarioCenarioErroRepository" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,20 +173,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" />
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" />
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" />
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario3" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario4" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario5" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario6" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenarioErroRepository" />
       <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" />
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" />
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" />
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenarioErroRepository" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario6" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario5" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario4" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario3" />
       </list>
     </recent_temporary>
   </component>
