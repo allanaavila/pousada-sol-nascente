@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pousada/solnascente/apiPousada/repository/FuncionarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/FuncionarioRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/repository/FuncionarioRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +46,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.ClienteServiceImplTest.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testRetornarFuncionarioPorEmail.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeEncontrarTodosFuncionario.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeExcluirPorID.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeRetornarFuncionarioPorCpf.executor": "Run",
+    "JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
     "JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -53,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiPousadaApplication.executor": "Run",
-    "git-widget-placeholder": "feature/endpoint-funcionario",
+    "git-widget-placeholder": "feature/endpoint-funcionario-test",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/allana/OneDrive/Documentos/apiPousada/apiPousada",
@@ -65,53 +78,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID">
-    <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.controller" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.controller.ClienteControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.ClienteRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.ClienteServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo">
+    <configuration name="FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +89,71 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
-      <option name="METHOD_NAME" value="testeSalvarEBuscarFuncionarioPorID" />
+      <option name="METHOD_NAME" value="testeAtualizarDadosDosFuncionarios" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
+      <option name="METHOD_NAME" value="testeEncontrarFuncionariosAtivos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
+      <option name="METHOD_NAME" value="testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
+      <option name="METHOD_NAME" value="testeRetornarFuncionariosPorCargo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.repository" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.repository.FuncionarioRepositoryTest" />
+      <option name="METHOD_NAME" value="testeRetornarVazioAoBuscarClientePorEmailInexistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,18 +168,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID" />
-      <item itemvalue="JUnit.ClienteRepositoryTest" />
-      <item itemvalue="JUnit.ClienteServiceImplTest" />
-      <item itemvalue="JUnit.ClienteControllerTest" />
+      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" />
+      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" />
+      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
+      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" />
+      <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" />
       <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID" />
-        <item itemvalue="JUnit.ClienteServiceImplTest" />
-        <item itemvalue="JUnit.ClienteRepositoryTest" />
-        <item itemvalue="JUnit.ClienteControllerTest" />
+        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarFuncionariosPorCargo" />
+        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeAtualizarDadosDosFuncionarios" />
+        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeEncontrarFuncionariosAtivos" />
+        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeLancarExcecaoAoSalvarFuncionarioComEmailDuplicado" />
+        <item itemvalue="JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +202,7 @@
       <updated>1747835706174</updated>
       <workItem from="1747835707894" duration="269000" />
       <workItem from="1747835998002" duration="569000" />
+      <workItem from="1747934445330" duration="4336000" />
     </task>
     <servers />
   </component>
