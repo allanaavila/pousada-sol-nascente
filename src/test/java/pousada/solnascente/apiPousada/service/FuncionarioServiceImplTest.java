@@ -15,6 +15,7 @@ import pousada.solnascente.apiPousada.util.CPFFormatter;
 import pousada.solnascente.apiPousada.util.EmailFormatter;
 import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -208,11 +209,57 @@ public class FuncionarioServiceImplTest {
         assertEquals("Erro no banco", thrown.getMessage());
     }
 
+    @Test
+    @DisplayName("Deve propagar exceção se ocorrer erro no repository ao salvar o funcionário")
+    void testeCadastrarFuncionarioErroAoSalvar() {
+        when(emailFormatter.isEmailValido(anyString())).thenReturn(true);
+        when(emailFormatter.formatToLowercase(anyString())).thenReturn("theo@gmail.com");
+        when(funcionarioRepository.findByEmail(anyString())).thenReturn(Optional.empty());
 
+        when(cpfFormatter.formatAndValidate(anyString())).thenReturn("123.456.789-00");
+        when(funcionarioRepository.findByCpf(anyString())).thenReturn(Optional.empty());
 
+        when(telefoneFormatter.isCelularValido(anyString())).thenReturn(true);
+        when(telefoneFormatter.formatCelular(anyString())).thenReturn("(11) 98765-4321");
 
+        when(funcionarioRepository.save(any())).thenThrow(new RuntimeException("Erro no banco"));
 
+        RuntimeException thrown = assertThrows(
+                RuntimeException.class,
+                () -> funcionarioService.cadastrarFuncionario(funcionarioDTOValido)
+        );
 
+        assertEquals("Erro no banco", thrown.getMessage());
+    }
 
+    //Testes metodo buscarFuncionarioPorId
+    @Test
+    @DisplayName("Deve retornar um funcionário quando encontrado pelo ID")
+    void testeBuscarFuncionarioPorIdCenario1() {
+        Long id = 1L;
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioSalvo));
+        Funcionario resultado = funcionarioService.buscarFuncionarioPorId(id);
 
+        assertNotNull(resultado);
+        assertEquals(id, resultado.getId());
+        assertEquals(funcionarioSalvo.getNome(), resultado.getNome());
+
+        verify(funcionarioRepository, times(1)).findById(id);
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção quando não encontrar funcionário pelo ID")
+    void testeBuscarFuncionarioPorIdCenario2() {
+        Long id = 2L;
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.empty());
+
+        NoSuchElementException thrown = assertThrows(
+                NoSuchElementException.class,
+                () -> funcionarioService.buscarFuncionarioPorId(id),
+                "Deveria lançar NoSuchElementException"
+        );
+
+        assertEquals("Funcionário não encontrado com o ID: " + id, thrown.getMessage());
+        verify(funcionarioRepository, times(1)).findById(id);
+    }
 }
