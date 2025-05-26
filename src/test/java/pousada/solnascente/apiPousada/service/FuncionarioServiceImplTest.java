@@ -486,4 +486,51 @@ public class FuncionarioServiceImplTest {
 
     // teste metodo desativarFuncionario
 
+    @Test
+    @DisplayName("Deve desativar um funcionário ativo com sucesso")
+    void testeDesativarFuncionarioCenario1() {
+        Long id = 1L;
+        funcionarioSalvo.setAtivo(true);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioSalvo));
+        when(funcionarioRepository.save(any(Funcionario.class))).thenReturn(funcionarioSalvo);
+
+        funcionarioService.desativarFuncionario(id);
+
+        assertFalse(funcionarioSalvo.isAtivo(), "Funcionário deveria estar inativo após desativação");
+        verify(funcionarioRepository, times(1)).save(funcionarioSalvo);
+    }
+
+    @Test
+    @DisplayName("Não deve desativar um funcionário que já está inativo")
+    void testeDesativarFuncionarioCenario2() {
+        Long id = 1L;
+        funcionarioSalvo.setAtivo(false);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioSalvo));
+
+        funcionarioService.desativarFuncionario(id);
+
+        assertFalse(funcionarioSalvo.isAtivo(), "Funcionário já estava inativo");
+        verify(funcionarioRepository, never()).save(any(Funcionario.class));
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção ao tentar desativar funcionário inexistente")
+    void testeDesativarFuncionarioCenario3() {
+        Long id = 999L;
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.empty());
+
+        NoSuchElementException thrown = assertThrows(
+                NoSuchElementException.class,
+                () -> funcionarioService.desativarFuncionario(id),
+                "Deveria lançar NoSuchElementException"
+        );
+
+        assertEquals("Funcionário não encontrado com o ID: " + id, thrown.getMessage());
+        verify(funcionarioRepository, never()).save(any(Funcionario.class));
+    }
+
+
 }
