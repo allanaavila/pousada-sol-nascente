@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Pousada Sol Nascente API
 
 Este repositório contém a API RESTful para o sistema de administração e controle de reservas da **Pousada Sol Nascente**.  
@@ -131,4 +131,4 @@ O módulo de funcionários é composto pelas seguintes camadas:
 - `FuncionarioController`: Endpoints **REST** para interação com o módulo.
 
 ---
->>>>>>> feature/endpoint-funcionario-test
+
