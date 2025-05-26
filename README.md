@@ -65,7 +65,7 @@ O desenvolvimento continua na branch feature/endpoint-funcionario, onde serão i
 
 Este README.md será atualizado continuamente à medida que novas funcionalidades forem implementadas e o projeto evoluir.
 
-=======
+
 # Módulo Funcionário
 
 Este módulo da **API da Pousada Sol Nascente** é responsável pela administração e gerenciamento dos dados dos funcionários da pousada. Ele permite o controle completo do ciclo de vida de um funcionário no sistema, incluindo seus perfis de acesso.
