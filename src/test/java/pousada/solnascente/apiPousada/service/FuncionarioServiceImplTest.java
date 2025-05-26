@@ -262,4 +262,228 @@ public class FuncionarioServiceImplTest {
         assertEquals("Funcionário não encontrado com o ID: " + id, thrown.getMessage());
         verify(funcionarioRepository, times(1)).findById(id);
     }
+
+    // teste metodo alterarFuncionario
+    @Test
+    @DisplayName("Deve alterar todos os campos do funcionário com sucesso")
+    void testeAlterarFuncionarioCenario1(){
+        Long id = 1L;
+        FuncionarioDTO funcionarioDTOAlterado = new FuncionarioDTO(
+                "Theo Mendes",
+                "987.654.321-00",
+                "theo.mendes@gmail.com",
+                "(11) 99999-8888",
+                "Gerente",
+                Perfil.GERENTE,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.findByEmail(funcionarioDTOAlterado.email())).thenReturn(Optional.empty());
+        when(emailFormatter.isEmailValido(funcionarioDTOAlterado.email())).thenReturn(true);
+        when(emailFormatter.formatToLowercase(funcionarioDTOAlterado.email())).thenReturn("theo.mendes@gmail.com");
+
+        when(funcionarioRepository.findByCpf(funcionarioDTOAlterado.cpf())).thenReturn(Optional.empty());
+        when(cpfFormatter.formatAndValidate(funcionarioDTOAlterado.cpf())).thenReturn("987.654.321-00");
+
+        when(telefoneFormatter.isCelularValido(funcionarioDTOAlterado.telefone())).thenReturn(true);
+        when(telefoneFormatter.formatCelular(funcionarioDTOAlterado.telefone())).thenReturn("(11) 99999-8888");
+
+        when(funcionarioRepository.save(any(Funcionario.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        Funcionario resultado = funcionarioService.alterarFuncionario(id, funcionarioDTOAlterado);
+
+        assertEquals("Theo Mendes", resultado.getNome());
+        assertEquals("theo.mendes@gmail.com", resultado.getEmail());
+        assertEquals("987.654.321-00", resultado.getCpf());
+        assertEquals("(11) 99999-8888", resultado.getTelefone());
+
+    }
+
+    @Test
+    @DisplayName("Não deve alterar e-mail se for nulo")
+    void testeAlterarFuncionarioEmailNulo(){
+        Long id = 1L;
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                "Theo Mendes",
+                null,
+                null,
+                null,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
+
+        Funcionario resultado = funcionarioService.alterarFuncionario(id, dtoAtualizado);
+
+        assertEquals(funcionarioDTOValido.email(), resultado.getEmail());
+    }
+
+
+    @Test
+    @DisplayName("Deve lançar exceção se novo e-mail já estiver cadastrado")
+    void testeAlterarFuncionarioEmailJaCadastrado() {
+        Long id = 1L;
+        String novoEmail = "jaexistente@gmail.com";
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                null,
+                null,
+                novoEmail,
+                null,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.findByEmail(novoEmail)).thenReturn(Optional.of(new Funcionario()));
+
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> funcionarioService.alterarFuncionario(id, dtoAtualizado)
+        );
+
+        assertEquals("Email já cadastrado", thrown.getMessage());
+    }
+
+
+    @Test
+    @DisplayName("Deve lançar exceção se novo e-mail for inválido")
+    void testeAlterarFuncionarioEmailInvalido(){
+        Long id = 1L;
+        String novoEmail = "emailinvalido";
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                null,
+                null,
+                novoEmail,
+                null,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.findByEmail(novoEmail)).thenReturn(Optional.empty());
+        when(emailFormatter.isEmailValido(novoEmail)).thenReturn(false);
+
+        ValidacaoException thrown = assertThrows(
+                ValidacaoException.class,
+                () -> funcionarioService.alterarFuncionario(id, dtoAtualizado)
+        );
+
+        assertEquals("Erro de validação no campo 'email': Formato de email inválido.", thrown.getMessage());
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção se novo CPF já estiver cadastrado")
+    void testeAlterarFuncionarioCpfJaCadastrado() {
+        Long id = 1L;
+        String novoCpf = "987.654.321-00";
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                null,
+                novoCpf,
+                null,
+                null,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.findByCpf(novoCpf)).thenReturn(Optional.of(new Funcionario()));
+
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
+                () -> funcionarioService.alterarFuncionario(id, dtoAtualizado)
+        );
+
+
+        assertEquals("CPF já cadastrado", thrown.getMessage());
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção se novo CPF for inválido")
+    void testeAlterarFuncionarioCpfInvalido() {
+        Long id = 1L;
+        String novoCpf = "111.111.111-11";
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                null,
+                novoCpf,
+                null,
+                null,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(funcionarioRepository.findByCpf(novoCpf)).thenReturn(Optional.empty());
+        when(cpfFormatter.formatAndValidate(novoCpf)).thenReturn(null);
+
+        ValidacaoException thrown = assertThrows(
+                ValidacaoException.class,
+                () -> funcionarioService.alterarFuncionario(id, dtoAtualizado)
+        );
+
+        assertEquals("Erro de validação no campo 'cpf': CPF inválido.", thrown.getMessage());
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção se novo telefone for inválido")
+    void testeAlterarFuncionarioTelefoneInvalido() {
+        Long id = 1L;
+        String novoTelefone = "123";
+
+        FuncionarioDTO dtoAtualizado = new FuncionarioDTO(
+                null,
+                null,
+                null,
+                novoTelefone,
+                null,
+                Perfil.USUARIO,
+                true
+        );
+
+        Funcionario funcionarioExistente = new Funcionario(funcionarioDTOValido);
+        funcionarioExistente.setId(id);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioExistente));
+        when(telefoneFormatter.isCelularValido(novoTelefone)).thenReturn(false);
+
+        ValidacaoException thrown = assertThrows(
+                ValidacaoException.class,
+                () -> funcionarioService.alterarFuncionario(id, dtoAtualizado)
+        );
+
+        assertEquals("Erro de validação no campo 'telefone': Telefone celular inválido.", thrown.getMessage());
+    }
+
+    // teste metodo desativarFuncionario
+
 }

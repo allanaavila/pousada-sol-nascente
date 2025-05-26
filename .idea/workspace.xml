@@ -55,6 +55,13 @@
     "JUnit.FuncionarioRepositoryTest.testeRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
     "JUnit.FuncionarioRepositoryTest.testeSalvarEBuscarFuncionarioPorID.executor": "Run",
     "JUnit.FuncionarioServiceImplTest.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCenario1.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfInvalido.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfJaCadastrado.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailInvalido.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailJaCadastrado.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailNulo.executor": "Run",
+    "JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioTelefoneInvalido.executor": "Run",
     "JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario1.executor": "Run",
     "JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario2.executor": "Run",
     "JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioCenario1.executor": "Run",
@@ -88,8 +95,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario2">
-    <configuration name="FuncionarioServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioTelefoneInvalido">
+    <configuration name="FuncionarioServiceImplTest.testeAlterarFuncionarioCpfInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -99,28 +106,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="apiPousada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
-      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
-      <option name="METHOD_NAME" value="testeBuscarFuncionarioPorIdCenario1" />
+      <option name="METHOD_NAME" value="testeAlterarFuncionarioCpfInvalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeAlterarFuncionarioCpfJaCadastrado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -130,13 +122,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
-      <option name="METHOD_NAME" value="testeBuscarFuncionarioPorIdCenario2" />
+      <option name="METHOD_NAME" value="testeAlterarFuncionarioCpfJaCadastrado" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioErroAoSalvar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeAlterarFuncionarioEmailInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -146,13 +138,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
-      <option name="METHOD_NAME" value="testeCadastrarFuncionarioErroAoSalvar" />
+      <option name="METHOD_NAME" value="testeAlterarFuncionarioEmailInvalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioServiceImplTest.testeCadastrarFuncionarioPerfilNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioServiceImplTest.testeAlterarFuncionarioEmailJaCadastrado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="apiPousada" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +154,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
       <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
-      <option name="METHOD_NAME" value="testeCadastrarFuncionarioPerfilNulo" />
+      <option name="METHOD_NAME" value="testeAlterarFuncionarioEmailJaCadastrado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioServiceImplTest.testeAlterarFuncionarioTelefoneInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="apiPousada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pousada.solnascente.apiPousada.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pousada.solnascente.apiPousada.service" />
+      <option name="MAIN_CLASS_NAME" value="pousada.solnascente.apiPousada.service.FuncionarioServiceImplTest" />
+      <option name="METHOD_NAME" value="testeAlterarFuncionarioTelefoneInvalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,20 +185,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FuncionarioServiceImplTest" />
-      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario1" />
-      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario2" />
-      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioErroAoSalvar" />
-      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioPerfilNulo" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfInvalido" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfJaCadastrado" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailInvalido" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailJaCadastrado" />
+      <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioTelefoneInvalido" />
       <item itemvalue="Spring Boot.ApiPousadaApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario2" />
-        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeBuscarFuncionarioPorIdCenario1" />
-        <item itemvalue="JUnit.FuncionarioServiceImplTest" />
-        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioPerfilNulo" />
-        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeCadastrarFuncionarioErroAoSalvar" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioTelefoneInvalido" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfInvalido" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioCpfJaCadastrado" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailInvalido" />
+        <item itemvalue="JUnit.FuncionarioServiceImplTest.testeAlterarFuncionarioEmailJaCadastrado" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +220,7 @@
       <workItem from="1747835707894" duration="269000" />
       <workItem from="1747835998002" duration="569000" />
       <workItem from="1747934445330" duration="4336000" />
+      <workItem from="1748259971173" duration="1352000" />
     </task>
     <servers />
   </component>
