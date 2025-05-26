@@ -15,6 +15,7 @@ import pousada.solnascente.apiPousada.util.CPFFormatter;
 import pousada.solnascente.apiPousada.util.EmailFormatter;
 import pousada.solnascente.apiPousada.util.TelefoneFormatter;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -532,5 +533,81 @@ public class FuncionarioServiceImplTest {
         verify(funcionarioRepository, never()).save(any(Funcionario.class));
     }
 
+    // teste metodo reativar cadastro funcionario
 
+    @Test
+    @DisplayName("Deve reativar um funcionário inativo com sucesso")
+    void testeReativarFuncionarioCenario1() {
+        Long id = 1L;
+        funcionarioSalvo.setAtivo(false);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioSalvo));
+        when(funcionarioRepository.save(any(Funcionario.class))).thenReturn(funcionarioSalvo);
+
+        funcionarioService.reativarFuncionario(id);
+
+        assertTrue(funcionarioSalvo.isAtivo(), "Funcionário deveria estar ativo após reativação");
+        verify(funcionarioRepository, times(1)).save(funcionarioSalvo);
+    }
+
+    @Test
+    @DisplayName("Não deve reativar um funcionário que já está ativo")
+    void testeReativarFuncionarioCenario2() {
+        Long id = 1L;
+        funcionarioSalvo.setAtivo(true);
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.of(funcionarioSalvo));
+
+        funcionarioService.reativarFuncionario(id);
+
+        assertTrue(funcionarioSalvo.isAtivo(), "Funcionário já estava ativo");
+        verify(funcionarioRepository, never()).save(any(Funcionario.class));
+    }
+
+    @Test
+    @DisplayName("Deve lançar exceção ao tentar reativar funcionário inexistente")
+    void testeReativarFuncionarioCenario3() {
+        Long id = 999L;
+
+        when(funcionarioRepository.findById(id)).thenReturn(Optional.empty());
+
+        NoSuchElementException thrown = assertThrows(
+                NoSuchElementException.class,
+                () -> funcionarioService.reativarFuncionario(id),
+                "Deveria lançar NoSuchElementException"
+        );
+
+        assertEquals("Funcionário não encontrado com o ID: " + id, thrown.getMessage());
+        verify(funcionarioRepository, never()).save(any(Funcionario.class));
+    }
+
+    //testes para o metodo listar todos os funcionarios
+    @Test
+    @DisplayName("Deve retornar lista vazia quando não houver funcionários")
+    void testeListarTodosFuncionariosCenario2() {
+        when(funcionarioRepository.findAll()).thenReturn(List.of());
+
+        List<FuncionarioDTO> resultado = funcionarioService.listarTodosFuncionarios();
+
+        assertNotNull(resultado);
+        assertTrue(resultado.isEmpty());
+
+        verify(funcionarioRepository, times(1)).findAll();
+        verifyNoInteractions(cpfFormatter, telefoneFormatter, emailFormatter);
+    }
+
+    @Test
+    @DisplayName("Deve propagar exceção se ocorrer erro ao buscar funcionários")
+    void testeListarTodosFuncionariosCenario3() {
+        when(funcionarioRepository.findAll()).thenThrow(new RuntimeException("Erro no banco"));
+
+        RuntimeException thrown = assertThrows(
+                RuntimeException.class,
+                () -> funcionarioService.listarTodosFuncionarios()
+        );
+
+        assertEquals("Erro no banco", thrown.getMessage());
+
+        verify(funcionarioRepository, times(1)).findAll();
+    }
 }
