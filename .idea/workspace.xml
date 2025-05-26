@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/FuncionarioControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pousada/solnascente/apiPousada/controller/FuncionarioControllerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c1c61413-c5cd-4088-a309-6ee2d0d623f0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,14 +44,17 @@
     "JUnit.FuncionarioControllerTest.deveRetornar404QuandoFuncionarioNaoExistir.executor": "Run",
     "JUnit.FuncionarioControllerTest.deveRetornarFuncionarioQuandoIdExistir.executor": "Run",
     "JUnit.FuncionarioControllerTest.deveRetornarListaDeFuncionariosComStatus200.executor": "Run",
+    "JUnit.FuncionarioControllerTest.executor": "Run",
     "JUnit.FuncionarioControllerTest.testDesativarFuncionario_naoEncontrado.executor": "Run",
     "JUnit.FuncionarioControllerTest.testDesativarFuncionario_sucesso.executor": "Run",
+    "JUnit.FuncionarioControllerTest.testReativarFuncionario_sucesso.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeAlterarFuncionarioBadRequest.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeAlterarFuncionarioComDadosInvalidos.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeAlterarFuncionarioComSucesso.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeAlterarFuncionarioNaoEncontrado.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeCadastrarFuncionarioComDadosInvalidos.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeCadastrarFuncionarioComSucesso.executor": "Run",
+    "JUnit.FuncionarioControllerTest.testeReativarFuncionarioNaoEncontrado.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeRetornar400QuandoDadosInvalidos.executor": "Run",
     "JUnit.FuncionarioControllerTest.testeRetornarListaVaziaDeFuncionarios.executor": "Run",
     "JUnit.FuncionarioRepositoryTest.deveRetornarVazioAoBuscarClientePorEmailInexistente.executor": "Run",
@@ -243,7 +243,7 @@
       <workItem from="1747835998002" duration="569000" />
       <workItem from="1747934445330" duration="4336000" />
       <workItem from="1748259971173" duration="2997000" />
-      <workItem from="1748263352271" duration="2442000" />
+      <workItem from="1748263352271" duration="2587000" />
     </task>
     <servers />
   </component>
